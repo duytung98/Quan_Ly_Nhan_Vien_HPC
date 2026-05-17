@@ -29,7 +29,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
         }
         public void loadData()
         {
-            gc_nhanvien.DataSource = ConnectData.getdata("SELECT * FROM NHANVIEN WHERE  TrangThai = \"Đang làm việc\" ORDER BY id desc;");
+            gc_nhanvien.DataSource = ConnectData.getdata("SELECT * FROM NHANVIEN WHERE DELETEO_BY IS NULL or TrangThai = \"Đang làm việc\" ORDER BY id desc;");
         }
         private void NhanVien_Load(object sender, EventArgs e)
         {
@@ -45,6 +45,46 @@ namespace Quan_Ly_Nhan_Vien_HPC
             gridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             btnSua1.Click += Btn_sua_Click;
             btnXoa1.Click += Btn_xoa_Click;
+            if (gv_nhanvien.Columns["STT"] != null)
+                gv_nhanvien.Columns["STT"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            if (gv_nhanvien.Columns["MaNV"] != null)
+                gv_nhanvien.Columns["MaNV"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            if (gv_nhanvien.Columns["HoDem"] != null)
+                gv_nhanvien.Columns["HoDem"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            if (gv_nhanvien.Columns["Ten"] != null)
+                gv_nhanvien.Columns["Ten"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            if (gv_nhanvien.Columns["NgaySinh"] != null)
+                gv_nhanvien.Columns["NgaySinh"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            if (gv_nhanvien.Columns["SDT"] != null)
+                gv_nhanvien.Columns["SDT"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            if (gv_nhanvien.Columns["btnSua1"] != null)
+                gv_nhanvien.Columns["btnSua1"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
+
+            if (gv_nhanvien.Columns["btnXoa1"] != null)
+                gv_nhanvien.Columns["btnXoa1"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
+
+
+            // ===== Tự động độ rộng =====
+            gv_nhanvien.OptionsView.ColumnAutoWidth = false;
+            gv_nhanvien.BestFitColumns();
+
+            // ===== Thanh cuộn =====
+            gv_nhanvien.HorzScrollVisibility =
+                DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+
+            gv_nhanvien.VertScrollVisibility =
+                DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            //gv_nhanvien.Columns["HoDem"].Width = 250;
         }
 
         private void Btn_xoa_Click(object sender, EventArgs e)

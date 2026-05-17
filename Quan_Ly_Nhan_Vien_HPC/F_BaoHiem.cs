@@ -42,6 +42,92 @@ namespace Quan_Ly_Nhan_Vien_HPC
             gridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             btn_sua.Click += Btn_sua_Click;
             btn_xoa.Click += Btn_xoa_Click;
+            lku_nhanvien.KeyDown += lku_nhanvien_KeyDown;
+            txt_sobaohiem.KeyDown += txt_sobaohiem_KeyDown;
+            txt_ghichu.KeyDown += txt_ghichu_KeyDown;
+            txt_noikham.KeyDown += txt_noikham_KeyDown;
+            txt_noicap.KeyDown += txt_noicap_KeyDown;
+            date_cap.KeyDown += date_cap_KeyDown;
+            if (gv_phonban.Columns["STT"] != null)
+                gv_phonban.Columns["STT"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            if (gv_phonban.Columns["MaNV"] != null)
+                gv_phonban.Columns["MaNV"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            if (gv_phonban.Columns["HoTen"] != null)
+                gv_phonban.Columns["HoTen"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Left;
+
+            // ===== Tự động độ rộng =====
+            gv_phonban.OptionsView.ColumnAutoWidth = false;
+            gv_phonban.BestFitColumns();
+
+            // ===== Thanh cuộn =====
+            gv_phonban.HorzScrollVisibility =
+                DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+
+            gv_phonban.VertScrollVisibility =
+                DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+        }
+
+        private void date_cap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_ghichu.Focus();
+            }
+        }
+
+        private void txt_noicap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_cap.Focus();
+            }
+        }
+
+        private void txt_noikham_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_noicap.Focus();
+            }
+        }
+
+        private void txt_ghichu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_themBH.PerformClick();
+            }
+        }
+
+        private void txt_sobaohiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_noikham.Focus();
+            }
+        }
+
+        private void lku_nhanvien_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_sobaohiem.Focus();
+            }
         }
 
         private void Btn_xoa_Click(object sender, EventArgs e)
@@ -881,6 +967,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         private void btn_lammoi_Click_1(object sender, EventArgs e)
         {
+            
+            
             load_baohiem();
             Loadnhanvien();
             clearform();

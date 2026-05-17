@@ -50,6 +50,7 @@
             this.btn_them = new DevExpress.XtraBars.BarButtonItem();
             this.btn_lammoi = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_import = new DevExpress.XtraBars.BarButtonItem();
             this.btn_dong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -97,7 +98,6 @@
             this.lkkhoa = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.cb_trinhdo1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.btn_import = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
@@ -183,7 +183,7 @@
             // 
             this.btn_lammoi.Caption = "Làm mới";
             this.btn_lammoi.Id = 7;
-            this.btn_lammoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_import.ImageOptions.Image")));
+            this.btn_lammoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_lammoi.ImageOptions.Image")));
             this.btn_lammoi.ItemAppearance.Disabled.BackColor = System.Drawing.Color.White;
             this.btn_lammoi.ItemAppearance.Disabled.Options.UseBackColor = true;
             this.btn_lammoi.ItemAppearance.Hovered.BackColor = System.Drawing.Color.DodgerBlue;
@@ -216,6 +216,28 @@
             this.btn_xuat.Name = "btn_xuat";
             this.btn_xuat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btn_xuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xuat_ItemClick);
+            // 
+            // btn_import
+            // 
+            this.btn_import.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btn_import.Caption = "Import dữ liệu";
+            this.btn_import.Id = 11;
+            this.btn_import.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_import.ImageOptions.SvgImage")));
+            this.btn_import.ItemAppearance.Disabled.BackColor = System.Drawing.Color.White;
+            this.btn_import.ItemAppearance.Disabled.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.btn_import.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btn_import.ItemAppearance.Normal.BackColor = System.Drawing.Color.White;
+            this.btn_import.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.btn_import.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_import.ItemInMenuAppearance.Disabled.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ItemInMenuAppearance.Disabled.Options.UseFont = true;
+            this.btn_import.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_import.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.btn_import.Name = "btn_import";
+            this.btn_import.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_import.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_import_ItemClick_1);
             // 
             // btn_dong
             // 
@@ -446,7 +468,7 @@
             this.HoDem.AppearanceCell.Options.UseFont = true;
             this.HoDem.AppearanceHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.HoDem.AppearanceHeader.Options.UseFont = true;
-            this.HoDem.Caption = "Họ đệm";
+            this.HoDem.Caption = "Họ nhân viên";
             this.HoDem.FieldName = "HoDem";
             this.HoDem.MinWidth = 21;
             this.HoDem.Name = "HoDem";
@@ -481,7 +503,7 @@
             this.NgaySinh.MinWidth = 21;
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.Visible = true;
-            this.NgaySinh.VisibleIndex = 5;
+            this.NgaySinh.VisibleIndex = 4;
             this.NgaySinh.Width = 49;
             // 
             // GioiTinh
@@ -496,7 +518,7 @@
             this.GioiTinh.MinWidth = 21;
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Visible = true;
-            this.GioiTinh.VisibleIndex = 6;
+            this.GioiTinh.VisibleIndex = 5;
             this.GioiTinh.Width = 50;
             // 
             // cb_gioitinh1
@@ -520,7 +542,7 @@
             this.DanToc.MinWidth = 21;
             this.DanToc.Name = "DanToc";
             this.DanToc.Visible = true;
-            this.DanToc.VisibleIndex = 4;
+            this.DanToc.VisibleIndex = 14;
             this.DanToc.Width = 49;
             // 
             // QuocTich
@@ -559,7 +581,7 @@
             this.DiaChiThuongChu.FieldName = "DiaChiThuongChu";
             this.DiaChiThuongChu.Name = "DiaChiThuongChu";
             this.DiaChiThuongChu.Visible = true;
-            this.DiaChiThuongChu.VisibleIndex = 13;
+            this.DiaChiThuongChu.VisibleIndex = 12;
             this.DiaChiThuongChu.Width = 42;
             // 
             // QueQuan
@@ -573,7 +595,7 @@
             this.QueQuan.MinWidth = 21;
             this.QueQuan.Name = "QueQuan";
             this.QueQuan.Visible = true;
-            this.QueQuan.VisibleIndex = 14;
+            this.QueQuan.VisibleIndex = 13;
             this.QueQuan.Width = 46;
             // 
             // CCCD
@@ -587,7 +609,7 @@
             this.CCCD.MinWidth = 21;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
-            this.CCCD.VisibleIndex = 9;
+            this.CCCD.VisibleIndex = 8;
             this.CCCD.Width = 48;
             // 
             // NoiCapCCCD
@@ -600,7 +622,7 @@
             this.NoiCapCCCD.FieldName = "NoiCapCCCD";
             this.NoiCapCCCD.Name = "NoiCapCCCD";
             this.NoiCapCCCD.Visible = true;
-            this.NoiCapCCCD.VisibleIndex = 11;
+            this.NoiCapCCCD.VisibleIndex = 10;
             this.NoiCapCCCD.Width = 42;
             // 
             // NgayCapCCCD
@@ -613,7 +635,7 @@
             this.NgayCapCCCD.FieldName = "NgayCapCCCD";
             this.NgayCapCCCD.Name = "NgayCapCCCD";
             this.NgayCapCCCD.Visible = true;
-            this.NgayCapCCCD.VisibleIndex = 10;
+            this.NgayCapCCCD.VisibleIndex = 9;
             this.NgayCapCCCD.Width = 54;
             // 
             // SDT
@@ -627,7 +649,7 @@
             this.SDT.MinWidth = 21;
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 7;
+            this.SDT.VisibleIndex = 6;
             this.SDT.Width = 49;
             // 
             // Email
@@ -641,7 +663,7 @@
             this.Email.MinWidth = 21;
             this.Email.Name = "Email";
             this.Email.Visible = true;
-            this.Email.VisibleIndex = 8;
+            this.Email.VisibleIndex = 7;
             this.Email.Width = 51;
             // 
             // TrinhDoChuyenMon
@@ -708,7 +730,7 @@
             this.MaSoThue.FieldName = "MaSoThue";
             this.MaSoThue.Name = "MaSoThue";
             this.MaSoThue.Visible = true;
-            this.MaSoThue.VisibleIndex = 12;
+            this.MaSoThue.VisibleIndex = 11;
             this.MaSoThue.Width = 42;
             // 
             // GhiChu
@@ -733,7 +755,9 @@
             this.sua.AppearanceCell.Options.UseFont = true;
             this.sua.AppearanceHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.sua.AppearanceHeader.Options.UseFont = true;
+            this.sua.Caption = "   ";
             this.sua.ColumnEdit = this.btnSua1;
+            this.sua.FieldName = "btnSua1";
             this.sua.MinWidth = 21;
             this.sua.Name = "sua";
             this.sua.Visible = true;
@@ -779,7 +803,9 @@
             this.xoa.AppearanceCell.Options.UseFont = true;
             this.xoa.AppearanceHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.xoa.AppearanceHeader.Options.UseFont = true;
+            this.xoa.Caption = "    ";
             this.xoa.ColumnEdit = this.btnXoa1;
+            this.xoa.FieldName = "btnXoa1";
             this.xoa.MinWidth = 21;
             this.xoa.Name = "xoa";
             this.xoa.Visible = true;
@@ -846,28 +872,6 @@
             "Tiến sỹ",
             "Giáo sư"});
             this.cb_trinhdo1.Name = "cb_trinhdo1";
-            // 
-            // btn_import
-            // 
-            this.btn_import.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_import.Caption = "Import dữ liệu";
-            this.btn_import.Id = 11;
-            this.btn_import.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btn_import.ItemAppearance.Disabled.BackColor = System.Drawing.Color.White;
-            this.btn_import.ItemAppearance.Disabled.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ItemAppearance.Disabled.Options.UseBackColor = true;
-            this.btn_import.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btn_import.ItemAppearance.Normal.BackColor = System.Drawing.Color.White;
-            this.btn_import.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.btn_import.ItemAppearance.Normal.Options.UseFont = true;
-            this.btn_import.ItemInMenuAppearance.Disabled.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ItemInMenuAppearance.Disabled.Options.UseFont = true;
-            this.btn_import.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_import.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.btn_import.Name = "btn_import";
-            this.btn_import.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.btn_import.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_import_ItemClick_1);
             // 
             // barButtonItem2
             // 

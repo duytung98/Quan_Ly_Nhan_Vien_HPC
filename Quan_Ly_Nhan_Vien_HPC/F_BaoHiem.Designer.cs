@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_BaoHiem));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,9 +39,9 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_BaoHiem));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_lammoi = new DevExpress.XtraEditors.SimpleButton();
             this.btn_themBH = new DevExpress.XtraEditors.SimpleButton();
             this.btn_importdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.btn_xuatexcel = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@
             this.btn_sua = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.xoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_xoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btn_lammoi = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -119,6 +119,18 @@
             this.panelControl2.Size = new System.Drawing.Size(1250, 73);
             this.panelControl2.TabIndex = 2;
             // 
+            // btn_lammoi
+            // 
+            this.btn_lammoi.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lammoi.Appearance.Options.UseFont = true;
+            this.btn_lammoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_lammoi.ImageOptions.SvgImage")));
+            this.btn_lammoi.Location = new System.Drawing.Point(274, 21);
+            this.btn_lammoi.Name = "btn_lammoi";
+            this.btn_lammoi.Size = new System.Drawing.Size(115, 36);
+            this.btn_lammoi.TabIndex = 22;
+            this.btn_lammoi.Text = "Làm mới";
+            this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click_1);
+            // 
             // btn_themBH
             // 
             this.btn_themBH.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,7 +148,7 @@
             this.btn_importdulieu.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_importdulieu.Appearance.Options.UseFont = true;
             this.btn_importdulieu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_importdulieu.ImageOptions.SvgImage")));
-            this.btn_importdulieu.Location = new System.Drawing.Point(643, 21);
+            this.btn_importdulieu.Location = new System.Drawing.Point(636, 21);
             this.btn_importdulieu.Name = "btn_importdulieu";
             this.btn_importdulieu.Size = new System.Drawing.Size(143, 36);
             this.btn_importdulieu.TabIndex = 20;
@@ -150,7 +162,7 @@
             this.btn_xuatexcel.ForeColor = System.Drawing.Color.Black;
             this.btn_xuatexcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuatexcel.Image")));
             this.btn_xuatexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xuatexcel.Location = new System.Drawing.Point(465, 19);
+            this.btn_xuatexcel.Location = new System.Drawing.Point(451, 19);
             this.btn_xuatexcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xuatexcel.Name = "btn_xuatexcel";
             this.btn_xuatexcel.Size = new System.Drawing.Size(124, 40);
@@ -260,17 +272,16 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(692, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.Size = new System.Drawing.Size(74, 22);
             this.label5.TabIndex = 91;
             this.label5.Text = "Ghi chú";
             // 
             // txt_noikham
             // 
-            this.txt_noikham.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_noikham.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_noikham.Location = new System.Drawing.Point(224, 122);
             this.txt_noikham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -290,7 +301,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(73, 123);
@@ -304,17 +314,16 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(692, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.Size = new System.Drawing.Size(74, 22);
             this.label2.TabIndex = 86;
             this.label2.Text = "Nơi cấp";
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(73, 79);
@@ -340,17 +349,16 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(692, 79);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.Size = new System.Drawing.Size(87, 22);
             this.label4.TabIndex = 84;
             this.label4.Text = "Ngày cấp";
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(73, 27);
@@ -581,18 +589,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // btn_lammoi
-            // 
-            this.btn_lammoi.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_lammoi.Appearance.Options.UseFont = true;
-            this.btn_lammoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btn_lammoi.Location = new System.Drawing.Point(274, 21);
-            this.btn_lammoi.Name = "btn_lammoi";
-            this.btn_lammoi.Size = new System.Drawing.Size(143, 36);
-            this.btn_lammoi.TabIndex = 22;
-            this.btn_lammoi.Text = "Import dữ liệu";
-            this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click_1);
             // 
             // F_BaoHiem
             // 
