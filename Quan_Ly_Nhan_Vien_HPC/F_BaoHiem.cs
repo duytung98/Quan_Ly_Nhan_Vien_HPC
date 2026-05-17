@@ -60,6 +60,16 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 gv_phonban.Columns["HoTen"].Fixed =
                     DevExpress.XtraGrid.Columns.FixedStyle.Left;
 
+            if (gv_phonban.Columns["btn_xoa"] != null)
+                gv_phonban.Columns["btn_xoa"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
+
+            if (gv_phonban.Columns["btn_sua"] != null)
+                gv_phonban.Columns["btn_sua"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
+
+
+
             // ===== Tự động độ rộng =====
             gv_phonban.OptionsView.ColumnAutoWidth = false;
             gv_phonban.BestFitColumns();

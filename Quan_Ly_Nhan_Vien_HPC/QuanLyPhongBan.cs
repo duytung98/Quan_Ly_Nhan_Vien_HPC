@@ -475,5 +475,170 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open =
+                    new OpenFileDialog();
+
+                open.Filter =
+                    "Excel File|*.xlsx;*.xls";
+
+                if (open.ShowDialog() != DialogResult.OK)
+                    return;
+
+                Excel.Application app =
+                    new Excel.Application();
+
+                Excel.Workbook wb =
+                    app.Workbooks.Open(open.FileName);
+
+                Excel.Worksheet ws =
+                    (Excel.Worksheet)wb.Sheets[1];
+
+                Excel.Range range =
+                    ws.UsedRange;
+
+                int rowCount =
+                    range.Rows.Count;
+
+                ConnectData.taoketnoi();
+
+                // ===== Bắt đầu từ dòng 4 =====
+                for (int i = 4; i <= rowCount; i++)
+                {
+                    try
+                    {
+                        // ===== Mã phòng ban =====
+                        string maPhongBan =
+                            Convert.ToString(
+                                (range.Cells[i, 2] as Excel.Range).Text);
+
+                        if (string.IsNullOrWhiteSpace(maPhongBan))
+                            continue;
+
+                        // ===== Tên phòng ban =====
+                        string tenPhongBan =
+                            Convert.ToString(
+                                (range.Cells[i, 3] as Excel.Range).Text);
+
+                        if (string.IsNullOrWhiteSpace(tenPhongBan))
+                        {
+                            MessageBox.Show(
+                                "Dòng "
+                                + i
+                                + " chưa có tên phòng ban",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                            continue;
+                        }
+
+                        // ===== Ghi chú =====
+                        string ghiChu =
+                            Convert.ToString(
+                                (range.Cells[i, 4] as Excel.Range).Text);
+
+                        // ===== Check trùng mã phòng ban =====
+                        string sqlCheck =
+                            "SELECT COUNT(*) FROM PHONGBAN WHERE MaPhongBan=@MaPhongBan";
+
+                        MySqlCommand cmdCheck =
+                            new MySqlCommand(
+                                sqlCheck,
+                                ConnectData.conn);
+
+                        cmdCheck.Parameters.AddWithValue(
+                            "@MaPhongBan",
+                            maPhongBan);
+
+                        int check =
+                            Convert.ToInt32(
+                                cmdCheck.ExecuteScalar());
+
+                        if (check > 0)
+                        {
+                            MessageBox.Show(
+                                "Mã phòng ban "
+                                + maPhongBan
+                                + " đã tồn tại",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                            continue;
+                        }
+
+                        // ===== Insert =====
+                       string sql = @"
+                        INSERT INTO PHONGBAN
+                        (
+                            MaPhongBan,
+                            TenPhongBan,
+                            GhiChu
+                        )
+                        VALUES
+                        (
+                            @MaPhongBan,
+                            @TenPhongBan,
+                            @GhiChu
+                        )";
+
+                        MySqlCommand cmd =
+                            new MySqlCommand(
+                                sql,
+                                ConnectData.conn);
+
+                        cmd.Parameters.AddWithValue(
+                            "@MaPhongBan",
+                            maPhongBan);
+
+                        cmd.Parameters.AddWithValue(
+                            "@TenPhongBan",
+                            tenPhongBan);
+
+                        cmd.Parameters.AddWithValue(
+                            "@GhiChu",
+                            ghiChu);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception exRow)
+                    {
+                        MessageBox.Show(
+                            "Lỗi dòng "
+                            + i
+                            + ":\n"
+                            + exRow.Message);
+                    }
+                }
+
+                wb.Close(false);
+                app.Quit();
+
+                Marshal.ReleaseComObject(ws);
+                Marshal.ReleaseComObject(wb);
+                Marshal.ReleaseComObject(app);
+
+                MessageBox.Show(
+                    "Import phòng ban thành công",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConnectData.dongketnoi();
+            }
+
+            loadPhongBan();
+        }
     }
 }

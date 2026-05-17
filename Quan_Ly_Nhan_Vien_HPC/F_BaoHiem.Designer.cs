@@ -103,7 +103,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1254, 283);
+            this.groupControl1.Size = new System.Drawing.Size(1285, 283);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Danh mục";
             // 
@@ -116,7 +116,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(2, 208);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1250, 73);
+            this.panelControl2.Size = new System.Drawing.Size(1281, 73);
             this.panelControl2.TabIndex = 2;
             // 
             // btn_lammoi
@@ -158,7 +158,7 @@
             // btn_xuatexcel
             // 
             this.btn_xuatexcel.BackColor = System.Drawing.Color.White;
-            this.btn_xuatexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_xuatexcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btn_xuatexcel.ForeColor = System.Drawing.Color.Black;
             this.btn_xuatexcel.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuatexcel.Image")));
             this.btn_xuatexcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,7 +191,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 23);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1250, 185);
+            this.panelControl1.Size = new System.Drawing.Size(1281, 185);
             this.panelControl1.TabIndex = 0;
             // 
             // txt_sobaohiem
@@ -262,7 +262,7 @@
             // 
             this.txt_ghichu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_ghichu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ghichu.Location = new System.Drawing.Point(789, 122);
+            this.txt_ghichu.Location = new System.Drawing.Point(804, 122);
             this.txt_ghichu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_ghichu.Name = "txt_ghichu";
             this.txt_ghichu.Size = new System.Drawing.Size(387, 29);
@@ -273,7 +273,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(692, 123);
+            this.label5.Location = new System.Drawing.Point(707, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 22);
@@ -293,7 +293,7 @@
             // 
             this.txt_noicap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_noicap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_noicap.Location = new System.Drawing.Point(789, 20);
+            this.txt_noicap.Location = new System.Drawing.Point(804, 20);
             this.txt_noicap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_noicap.Name = "txt_noicap";
             this.txt_noicap.Size = new System.Drawing.Size(387, 29);
@@ -315,7 +315,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(692, 27);
+            this.label2.Location = new System.Drawing.Point(707, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 22);
@@ -339,7 +339,7 @@
             this.date_cap.CustomFormat = "dd/MM/yyyy";
             this.date_cap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_cap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_cap.Location = new System.Drawing.Point(789, 75);
+            this.date_cap.Location = new System.Drawing.Point(804, 75);
             this.date_cap.Margin = new System.Windows.Forms.Padding(1);
             this.date_cap.Name = "date_cap";
             this.date_cap.Size = new System.Drawing.Size(387, 29);
@@ -350,7 +350,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(692, 79);
+            this.label4.Location = new System.Drawing.Point(707, 79);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 22);
@@ -374,7 +374,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 283);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1254, 280);
+            this.groupControl2.Size = new System.Drawing.Size(1285, 387);
             this.groupControl2.TabIndex = 7;
             this.groupControl2.Text = "Danh sách bảo hiểm";
             // 
@@ -387,7 +387,7 @@
             this.gc_phongban.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_sua,
             this.btn_xoa});
-            this.gc_phongban.Size = new System.Drawing.Size(1250, 255);
+            this.gc_phongban.Size = new System.Drawing.Size(1281, 362);
             this.gc_phongban.TabIndex = 0;
             this.gc_phongban.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_phonban});
@@ -557,10 +557,12 @@
             this.sua.AppearanceCell.Options.UseFont = true;
             this.sua.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.sua.AppearanceHeader.Options.UseFont = true;
+            this.sua.Caption = "  ";
             this.sua.ColumnEdit = this.btn_sua;
+            this.sua.FieldName = "btn_sua";
             this.sua.Name = "sua";
             this.sua.Visible = true;
-            this.sua.VisibleIndex = 11;
+            this.sua.VisibleIndex = 12;
             // 
             // btn_sua
             // 
@@ -577,10 +579,12 @@
             this.xoa.AppearanceCell.Options.UseFont = true;
             this.xoa.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.xoa.AppearanceHeader.Options.UseFont = true;
+            this.xoa.Caption = "   ";
             this.xoa.ColumnEdit = this.btn_xoa;
+            this.xoa.FieldName = "btn_xoa";
             this.xoa.Name = "xoa";
             this.xoa.Visible = true;
-            this.xoa.VisibleIndex = 12;
+            this.xoa.VisibleIndex = 11;
             // 
             // btn_xoa
             // 
@@ -594,7 +598,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1254, 563);
+            this.ClientSize = new System.Drawing.Size(1285, 670);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "F_BaoHiem";

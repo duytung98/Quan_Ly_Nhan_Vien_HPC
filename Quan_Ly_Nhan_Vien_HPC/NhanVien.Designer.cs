@@ -147,6 +147,7 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatLocation = new System.Drawing.Point(2653, 124);
             this.bar2.FloatSize = new System.Drawing.Size(0, 90);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_them),
@@ -253,6 +254,7 @@
             this.btn_dong.ItemAppearance.Normal.Options.UseFont = true;
             this.btn_dong.Name = "btn_dong";
             this.btn_dong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_dong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_dong_ItemClick);
             // 
             // barDockControlTop
             // 

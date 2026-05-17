@@ -65,14 +65,15 @@ namespace Quan_Ly_Nhan_Vien_HPC
             if (gv_nhanvien.Columns["SDT"] != null)
                 gv_nhanvien.Columns["SDT"].Fixed =
                     DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            if (gv_nhanvien.Columns["btnSua1"] != null)
-                gv_nhanvien.Columns["btnSua1"].Fixed =
-                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
+
 
             if (gv_nhanvien.Columns["btnXoa1"] != null)
                 gv_nhanvien.Columns["btnXoa1"].Fixed =
                     DevExpress.XtraGrid.Columns.FixedStyle.Right;
 
+            if (gv_nhanvien.Columns["btnSua1"] != null)
+                gv_nhanvien.Columns["btnSua1"].Fixed =
+                    DevExpress.XtraGrid.Columns.FixedStyle.Right;
 
             // ===== Tự động độ rộng =====
             gv_nhanvien.OptionsView.ColumnAutoWidth = false;
@@ -820,6 +821,11 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 ConnectData.dongketnoi();
             }
             loadData();
+        }
+
+        private void btn_dong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

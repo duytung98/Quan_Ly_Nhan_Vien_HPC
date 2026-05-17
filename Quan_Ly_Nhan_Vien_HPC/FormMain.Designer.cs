@@ -198,6 +198,7 @@
             this.HopDong.ItemAppearance.Normal.Options.UseFont = true;
             this.HopDong.Name = "HopDong";
             this.HopDong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.HopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.HopDong_ItemClick);
             // 
             // KhenThuong
             // 
@@ -505,13 +506,13 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_phongban, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.NhanVien, true);
+            this.ribbonPageGroup2.ItemLinks.Add(this.HopDong, true);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_BaoHiem, true);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Danh mục dùng chung";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.HopDong);
             this.ribbonPageGroup5.ItemLinks.Add(this.Nangluong, true);
             this.ribbonPageGroup5.ItemLinks.Add(this.KhenThuong, true);
             this.ribbonPageGroup5.ItemLinks.Add(this.DieuChuyen, true);

@@ -19,14 +19,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             InitializeComponent();
         }
-        string matk;
-        public F_ThongTinGiangVien(string manv)
-        {
-            //InitializeComponent();
-            ////matk = manv;
-            //txt_hodem.Text = manv;
-
-        }
+        
         NhanVien f_GiangVien = (NhanVien)Application.OpenForms["NhanVien"];
         DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
         string imagePath = "";
