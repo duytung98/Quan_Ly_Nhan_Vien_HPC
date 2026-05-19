@@ -259,6 +259,7 @@ VALUES
             cb_loaihopdong.Text = "Hợp đồng dài hạn";
             Loadnhanvien();
             load_hopdong();
+            Load_lbl_phongban();
             gv_hopdong.OptionsBehavior.Editable = true;
             gv_hopdong.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
             GridView gridView = gv_hopdong;
@@ -593,15 +594,17 @@ VALUES
             load_hopdong();
         }
         
-        private void Loadnhanvien()
+        void Loadnhanvien()
         {
             this.lku_nhanvien.Properties.DataSource = ConnectData.getdata("SELECT \r\n        nv.*,\r\n        CONCAT(nv.HoDem, ' ', nv.Ten) AS HoTen\r\n    FROM NHANVIEN nv\r\n    LEFT JOIN HOPDONG bh\r\n        ON nv.id = bh.NhanVien_id\r\n    WHERE nv.DELETEO_BY IS NULL\r\n        AND bh.NhanVien_id IS NULL\r\n    ORDER BY nv.id ASC");
             this.lku_nhanvien.Properties.DisplayMember = "HoTen";
             this.lku_nhanvien.Properties.ValueMember = "id";
 
-
+        }
+        void Load_lbl_phongban()
+        {
             this.lbl_phongban.Properties.DataSource = ConnectData.getdata("SELECT * FROM PHONGBAN");
-            this.lbl_phongban.Properties.DisplayMember = "TenPhong";
+            this.lbl_phongban.Properties.DisplayMember = "TenPhongBan";
             this.lbl_phongban.Properties.ValueMember = "id";
         }
 

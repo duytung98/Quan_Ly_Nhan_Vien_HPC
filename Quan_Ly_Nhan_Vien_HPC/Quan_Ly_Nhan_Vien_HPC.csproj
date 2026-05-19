@@ -216,6 +216,12 @@
     <Compile Include="F_DoiMatKhau.Designer.cs">
       <DependentUpon>F_DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GiaDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GiaDinh.Designer.cs">
+      <DependentUpon>F_GiaDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_HopDong1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_DoiMatKhau.resx">
       <DependentUpon>F_DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GiaDinh.resx">
+      <DependentUpon>F_GiaDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_HopDong1.resx">
       <DependentUpon>F_HopDong1.cs</DependentUpon>
@@ -308,6 +317,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\360_F_671334604_ZBV26w9fERX8FCLUyDrCrLrZG6bq7h0Q.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doandang %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doandang-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doandang-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

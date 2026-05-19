@@ -120,5 +120,10 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             openForm(typeof(F_HopDong1));
         }
+
+        private void Nangluong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(F_GiaDinh));
+        }
     }
 }

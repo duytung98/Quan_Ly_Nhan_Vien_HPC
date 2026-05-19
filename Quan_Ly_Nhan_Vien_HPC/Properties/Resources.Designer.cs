@@ -83,6 +83,36 @@ namespace Quan_Ly_Nhan_Vien_HPC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap doandang__1_ {
+            get {
+                object obj = ResourceManager.GetObject("doandang (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doandang_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("doandang-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap doandang_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("doandang-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mat {
             get {
                 object obj = ResourceManager.GetObject("mat", resourceCulture);

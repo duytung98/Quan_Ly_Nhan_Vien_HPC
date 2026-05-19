@@ -16,7 +16,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new F_GiaDinh());
         }
     }
 }
