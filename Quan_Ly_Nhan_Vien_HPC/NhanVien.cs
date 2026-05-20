@@ -678,7 +678,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     string ghiChu =
                         Convert.ToString(
                             (range.Cells[i, 22] as Excel.Range).Text);
-
+                    string pass = "12345678";
                     // ===== Insert =====
                     string sql = @"INSERT INTO NHANVIEN
             (
@@ -747,7 +747,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     // Password mặc định
                     cmd.Parameters.AddWithValue(
                         "@Password",
-                        "12345678");
+                         BCrypt.Net.BCrypt.EnhancedHashPassword(pass, 10));
 
                     cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                     cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);

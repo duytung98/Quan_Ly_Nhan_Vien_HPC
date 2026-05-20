@@ -43,10 +43,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         private void listBox_sinhnhat_CustomizeItem(object sender, CustomizeTemplatedItemEventArgs e)
         {
-            if (e.TemplatedItem.Elements[1].Text.Substring(0,2) == DateTime.Now.Day.ToString())
-            {
-                e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
-            }
+           
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,6 +75,15 @@ namespace Quan_Ly_Nhan_Vien_HPC
         private void FormMain_Load(object sender, EventArgs e)
         {
             loadSinhNhat();
+            ls_sinhnhat.CustomizeItem += ls_sinhnhat_CustomizeItem;
+        }
+
+        private void ls_sinhnhat_CustomizeItem(object sender, CustomizeTemplatedItemEventArgs e)
+        {
+            if (e.TemplatedItem.Elements[1].Text.Substring(0, 2) == DateTime.Now.Day.ToString())
+            {
+                e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
+            }
         }
 
         private void DoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

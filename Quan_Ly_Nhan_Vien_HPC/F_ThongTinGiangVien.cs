@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace Quan_Ly_Nhan_Vien_HPC
 {
@@ -482,7 +484,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     txt_sdt.Focus();
                     return;
                 }
-
+                string pass = "12345678";
                 // ===== Insert =====
                 string sql = @"INSERT INTO NHANVIEN
         (
@@ -558,7 +560,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     .CurrentCulture.TextInfo
                     .ToTitleCase(txt_tennv.Text.Trim().ToLower()));
 
-                cmd.Parameters.AddWithValue("@Password", "12345678");
+                cmd.Parameters.AddWithValue("@Password", BCrypt.Net.BCrypt.EnhancedHashPassword(pass, 10));
 
                 cmd.Parameters.AddWithValue("@NgaySinh", date_ngaysinh.Value);
 
@@ -691,6 +693,36 @@ namespace Quan_Ly_Nhan_Vien_HPC
             {
                 clearForm();
                 this.Close();
+            }
+        }
+
+        private void txt_sdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // ===== Chỉ cho nhập số =====
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_cccd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // ===== Chỉ cho nhập số =====
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_masothue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // ===== Chỉ cho nhập số =====
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

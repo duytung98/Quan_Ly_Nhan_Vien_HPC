@@ -65,23 +65,23 @@
             this.txt_hodem = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_chonHA = new DevExpress.XtraEditors.SimpleButton();
-            this.pcb_hinhanh = new System.Windows.Forms.PictureBox();
-            this.txt_tennv = new System.Windows.Forms.TextBox();
-            this.cb_gioitimh = new System.Windows.Forms.ComboBox();
+            this.txt_sdt = new DevExpress.XtraEditors.TextEdit();
+            this.txt_masothue = new DevExpress.XtraEditors.TextEdit();
+            this.txt_cccd = new DevExpress.XtraEditors.TextEdit();
             this.txt_quoctich = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.cb_gioitimh = new System.Windows.Forms.ComboBox();
+            this.txt_tennv = new System.Windows.Forms.TextBox();
+            this.btn_chonHA = new DevExpress.XtraEditors.SimpleButton();
+            this.pcb_hinhanh = new System.Windows.Forms.PictureBox();
             this.txt_ghichu = new System.Windows.Forms.TextBox();
-            this.txt_cccd = new DevExpress.XtraEditors.TextEdit();
-            this.txt_masothue = new DevExpress.XtraEditors.TextEdit();
-            this.txt_sdt = new DevExpress.XtraEditors.TextEdit();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_hinhanh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cccd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_masothue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sdt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_masothue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cccd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_hinhanh)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_huy1
@@ -145,7 +145,7 @@
             // 
             this.txt_chungchikhac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_chungchikhac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_chungchikhac.Location = new System.Drawing.Point(687, 571);
+            this.txt_chungchikhac.Location = new System.Drawing.Point(657, 571);
             this.txt_chungchikhac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_chungchikhac.Name = "txt_chungchikhac";
             this.txt_chungchikhac.Size = new System.Drawing.Size(221, 23);
@@ -158,7 +158,7 @@
             this.date_ngaycap.CustomFormat = "dd/MM/yyyy";
             this.date_ngaycap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_ngaycap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_ngaycap.Location = new System.Drawing.Point(995, 254);
+            this.date_ngaycap.Location = new System.Drawing.Point(965, 254);
             this.date_ngaycap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_ngaycap.Name = "date_ngaycap";
             this.date_ngaycap.Size = new System.Drawing.Size(221, 23);
@@ -168,7 +168,7 @@
             // 
             this.txt_quequan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_quequan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_quequan.Location = new System.Drawing.Point(998, 185);
+            this.txt_quequan.Location = new System.Drawing.Point(968, 185);
             this.txt_quequan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_quequan.Name = "txt_quequan";
             this.txt_quequan.Size = new System.Drawing.Size(221, 23);
@@ -179,7 +179,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(995, 152);
+            this.label12.Location = new System.Drawing.Point(965, 152);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 17);
             this.label12.TabIndex = 75;
@@ -190,7 +190,7 @@
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(992, 223);
+            this.label32.Location = new System.Drawing.Point(962, 223);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(76, 17);
             this.label32.TabIndex = 69;
@@ -201,7 +201,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(992, 377);
+            this.label24.Location = new System.Drawing.Point(962, 377);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(82, 17);
             this.label24.TabIndex = 53;
@@ -211,7 +211,7 @@
             // 
             this.txt_HocVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_HocVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HocVi.Location = new System.Drawing.Point(393, 571);
+            this.txt_HocVi.Location = new System.Drawing.Point(363, 571);
             this.txt_HocVi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_HocVi.Name = "txt_HocVi";
             this.txt_HocVi.Size = new System.Drawing.Size(215, 23);
@@ -236,7 +236,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(397, 539);
+            this.label26.Location = new System.Drawing.Point(367, 539);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(109, 17);
             this.label26.TabIndex = 49;
@@ -246,7 +246,7 @@
             // 
             this.txt_GDPT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_GDPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GDPT.Location = new System.Drawing.Point(687, 488);
+            this.txt_GDPT.Location = new System.Drawing.Point(657, 488);
             this.txt_GDPT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_GDPT.Name = "txt_GDPT";
             this.txt_GDPT.Size = new System.Drawing.Size(221, 23);
@@ -257,7 +257,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(687, 456);
+            this.label27.Location = new System.Drawing.Point(657, 456);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(195, 17);
             this.label27.TabIndex = 47;
@@ -267,7 +267,7 @@
             // 
             this.txt_trinhdochuyenmon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_trinhdochuyenmon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_trinhdochuyenmon.Location = new System.Drawing.Point(995, 330);
+            this.txt_trinhdochuyenmon.Location = new System.Drawing.Point(965, 330);
             this.txt_trinhdochuyenmon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_trinhdochuyenmon.Name = "txt_trinhdochuyenmon";
             this.txt_trinhdochuyenmon.Size = new System.Drawing.Size(221, 23);
@@ -278,7 +278,7 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(989, 298);
+            this.label29.Location = new System.Drawing.Point(959, 298);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(146, 17);
             this.label29.TabIndex = 42;
@@ -289,7 +289,7 @@
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(687, 542);
+            this.label30.Location = new System.Drawing.Point(657, 542);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(109, 17);
             this.label30.TabIndex = 41;
@@ -299,7 +299,7 @@
             // 
             this.txt_noicap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_noicap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_noicap.Location = new System.Drawing.Point(690, 256);
+            this.txt_noicap.Location = new System.Drawing.Point(660, 256);
             this.txt_noicap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_noicap.Name = "txt_noicap";
             this.txt_noicap.Size = new System.Drawing.Size(221, 23);
@@ -310,7 +310,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(690, 224);
+            this.label2.Location = new System.Drawing.Point(660, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 37;
@@ -320,7 +320,7 @@
             // 
             this.txt_dcThuongChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_dcThuongChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dcThuongChu.Location = new System.Drawing.Point(687, 330);
+            this.txt_dcThuongChu.Location = new System.Drawing.Point(657, 330);
             this.txt_dcThuongChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_dcThuongChu.Name = "txt_dcThuongChu";
             this.txt_dcThuongChu.Size = new System.Drawing.Size(221, 23);
@@ -331,7 +331,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(687, 298);
+            this.label5.Location = new System.Drawing.Point(657, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(128, 17);
             this.label5.TabIndex = 33;
@@ -352,7 +352,7 @@
             // 
             this.txt_tongiao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_tongiao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tongiao.Location = new System.Drawing.Point(687, 409);
+            this.txt_tongiao.Location = new System.Drawing.Point(657, 409);
             this.txt_tongiao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_tongiao.Name = "txt_tongiao";
             this.txt_tongiao.Size = new System.Drawing.Size(221, 23);
@@ -364,7 +364,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(687, 378);
+            this.label6.Location = new System.Drawing.Point(657, 378);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 17);
             this.label6.TabIndex = 31;
@@ -376,7 +376,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(390, 224);
+            this.label3.Location = new System.Drawing.Point(360, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 29;
@@ -387,7 +387,7 @@
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(391, 292);
+            this.label21.Location = new System.Drawing.Point(361, 292);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(99, 17);
             this.label21.TabIndex = 27;
@@ -397,7 +397,7 @@
             // 
             this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Location = new System.Drawing.Point(390, 488);
+            this.txt_email.Location = new System.Drawing.Point(360, 488);
             this.txt_email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(218, 23);
@@ -409,7 +409,7 @@
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(394, 456);
+            this.label18.Location = new System.Drawing.Point(364, 456);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 17);
             this.label18.TabIndex = 21;
@@ -420,7 +420,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(387, 149);
+            this.label15.Location = new System.Drawing.Point(357, 149);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 17);
             this.label15.TabIndex = 15;
@@ -433,7 +433,7 @@
             this.date_ngaysinh.CustomFormat = "dd/MM/yyyy";
             this.date_ngaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_ngaysinh.Location = new System.Drawing.Point(995, 104);
+            this.date_ngaysinh.Location = new System.Drawing.Point(965, 104);
             this.date_ngaysinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_ngaysinh.Name = "date_ngaysinh";
             this.date_ngaysinh.Size = new System.Drawing.Size(221, 23);
@@ -444,7 +444,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(684, 71);
+            this.label11.Location = new System.Drawing.Point(654, 71);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 17);
             this.label11.TabIndex = 6;
@@ -454,7 +454,7 @@
             // 
             this.txt_dantoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_dantoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dantoc.Location = new System.Drawing.Point(387, 409);
+            this.txt_dantoc.Location = new System.Drawing.Point(357, 409);
             this.txt_dantoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_dantoc.Name = "txt_dantoc";
             this.txt_dantoc.Size = new System.Drawing.Size(221, 23);
@@ -466,7 +466,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(387, 378);
+            this.label10.Location = new System.Drawing.Point(357, 378);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 17);
             this.label10.TabIndex = 4;
@@ -478,7 +478,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(995, 75);
+            this.label9.Location = new System.Drawing.Point(965, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 17);
             this.label9.TabIndex = 2;
@@ -488,7 +488,7 @@
             // 
             this.txt_hodem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_hodem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_hodem.Location = new System.Drawing.Point(390, 106);
+            this.txt_hodem.Location = new System.Drawing.Point(360, 106);
             this.txt_hodem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_hodem.Name = "txt_hodem";
             this.txt_hodem.Size = new System.Drawing.Size(221, 23);
@@ -499,7 +499,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(390, 75);
+            this.label8.Location = new System.Drawing.Point(360, 75);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 0;
@@ -561,6 +561,85 @@
             this.panel3.TabIndex = 9;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // txt_sdt
+            // 
+            this.txt_sdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_sdt.Location = new System.Drawing.Point(360, 330);
+            this.txt_sdt.Name = "txt_sdt";
+            this.txt_sdt.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txt_sdt.Properties.Appearance.Options.UseFont = true;
+            this.txt_sdt.Size = new System.Drawing.Size(221, 24);
+            this.txt_sdt.TabIndex = 92;
+            this.txt_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sdt_KeyPress);
+            // 
+            // txt_masothue
+            // 
+            this.txt_masothue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_masothue.Location = new System.Drawing.Point(968, 409);
+            this.txt_masothue.Name = "txt_masothue";
+            this.txt_masothue.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txt_masothue.Properties.Appearance.Options.UseFont = true;
+            this.txt_masothue.Size = new System.Drawing.Size(221, 24);
+            this.txt_masothue.TabIndex = 91;
+            this.txt_masothue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_masothue_KeyPress);
+            // 
+            // txt_cccd
+            // 
+            this.txt_cccd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_cccd.Location = new System.Drawing.Point(357, 260);
+            this.txt_cccd.Name = "txt_cccd";
+            this.txt_cccd.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.txt_cccd.Properties.Appearance.Options.UseFont = true;
+            this.txt_cccd.Size = new System.Drawing.Size(221, 24);
+            this.txt_cccd.TabIndex = 90;
+            this.txt_cccd.TextChanged += new System.EventHandler(this.txt_cccd_TextChanged);
+            this.txt_cccd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cccd_KeyPress);
+            // 
+            // txt_quoctich
+            // 
+            this.txt_quoctich.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_quoctich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_quoctich.Location = new System.Drawing.Point(657, 183);
+            this.txt_quoctich.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_quoctich.Name = "txt_quoctich";
+            this.txt_quoctich.Size = new System.Drawing.Size(221, 23);
+            this.txt_quoctich.TabIndex = 88;
+            this.txt_quoctich.Text = "Việt Nam";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(657, 152);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 17);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "Quốc tịch";
+            // 
+            // cb_gioitimh
+            // 
+            this.cb_gioitimh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cb_gioitimh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.cb_gioitimh.FormattingEnabled = true;
+            this.cb_gioitimh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cb_gioitimh.Location = new System.Drawing.Point(357, 183);
+            this.cb_gioitimh.Name = "cb_gioitimh";
+            this.cb_gioitimh.Size = new System.Drawing.Size(224, 25);
+            this.cb_gioitimh.TabIndex = 87;
+            // 
+            // txt_tennv
+            // 
+            this.txt_tennv.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_tennv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tennv.Location = new System.Drawing.Point(657, 106);
+            this.txt_tennv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_tennv.Name = "txt_tennv";
+            this.txt_tennv.Size = new System.Drawing.Size(221, 23);
+            this.txt_tennv.TabIndex = 86;
+            // 
             // btn_chonHA
             // 
             this.btn_chonHA.Appearance.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -585,106 +664,27 @@
             this.pcb_hinhanh.TabIndex = 84;
             this.pcb_hinhanh.TabStop = false;
             // 
-            // txt_tennv
-            // 
-            this.txt_tennv.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_tennv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tennv.Location = new System.Drawing.Point(687, 106);
-            this.txt_tennv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_tennv.Name = "txt_tennv";
-            this.txt_tennv.Size = new System.Drawing.Size(221, 23);
-            this.txt_tennv.TabIndex = 86;
-            // 
-            // cb_gioitimh
-            // 
-            this.cb_gioitimh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.cb_gioitimh.FormattingEnabled = true;
-            this.cb_gioitimh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cb_gioitimh.Location = new System.Drawing.Point(387, 183);
-            this.cb_gioitimh.Name = "cb_gioitimh";
-            this.cb_gioitimh.Size = new System.Drawing.Size(224, 25);
-            this.cb_gioitimh.TabIndex = 87;
-            // 
-            // txt_quoctich
-            // 
-            this.txt_quoctich.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_quoctich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_quoctich.Location = new System.Drawing.Point(687, 183);
-            this.txt_quoctich.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_quoctich.Name = "txt_quoctich";
-            this.txt_quoctich.Size = new System.Drawing.Size(221, 23);
-            this.txt_quoctich.TabIndex = 88;
-            this.txt_quoctich.Text = "Việt Nam";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(687, 152);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 17);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "Quốc tịch";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(995, 456);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(69, 17);
-            this.label20.TabIndex = 59;
-            this.label20.Text = "Ghi chú  :";
-            // 
             // txt_ghichu
             // 
             this.txt_ghichu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_ghichu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ghichu.Location = new System.Drawing.Point(995, 488);
+            this.txt_ghichu.Location = new System.Drawing.Point(965, 488);
             this.txt_ghichu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_ghichu.Multiline = true;
             this.txt_ghichu.Name = "txt_ghichu";
             this.txt_ghichu.Size = new System.Drawing.Size(221, 106);
             this.txt_ghichu.TabIndex = 30;
             // 
-            // txt_cccd
+            // label20
             // 
-            this.txt_cccd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_cccd.Location = new System.Drawing.Point(387, 260);
-            this.txt_cccd.Name = "txt_cccd";
-            this.txt_cccd.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txt_cccd.Properties.Appearance.Options.UseFont = true;
-            this.txt_cccd.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txt_cccd.Properties.MaskSettings.Set("mask", "d");
-            this.txt_cccd.Size = new System.Drawing.Size(221, 24);
-            this.txt_cccd.TabIndex = 90;
-            this.txt_cccd.TextChanged += new System.EventHandler(this.txt_cccd_TextChanged);
-            // 
-            // txt_masothue
-            // 
-            this.txt_masothue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_masothue.Location = new System.Drawing.Point(998, 409);
-            this.txt_masothue.Name = "txt_masothue";
-            this.txt_masothue.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txt_masothue.Properties.Appearance.Options.UseFont = true;
-            this.txt_masothue.Size = new System.Drawing.Size(221, 24);
-            this.txt_masothue.TabIndex = 91;
-            // 
-            // txt_sdt
-            // 
-            this.txt_sdt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_sdt.Location = new System.Drawing.Point(390, 330);
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
-            this.txt_sdt.Properties.Appearance.Options.UseFont = true;
-            this.txt_sdt.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.txt_sdt.Properties.MaskSettings.Set("mask", "d");
-            this.txt_sdt.Size = new System.Drawing.Size(221, 24);
-            this.txt_sdt.TabIndex = 92;
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(965, 456);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(69, 17);
+            this.label20.TabIndex = 59;
+            this.label20.Text = "Ghi chú  :";
             // 
             // F_ThongTinGiangVien
             // 
@@ -701,10 +701,10 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_hinhanh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cccd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_masothue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sdt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_masothue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cccd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_hinhanh)).EndInit();
             this.ResumeLayout(false);
 
         }
