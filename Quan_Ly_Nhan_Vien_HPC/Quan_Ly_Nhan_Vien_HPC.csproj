@@ -210,16 +210,16 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_BaoHiem.cs">
+    <Compile Include="QuanLyNhanSu\F_BaoHiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_BaoHiem.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_BaoHiem.Designer.cs">
       <DependentUpon>F_BaoHiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Doan_Dang.cs">
+    <Compile Include="QuanLyNhanSu\F_Doan_Dang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Doan_Dang.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_Doan_Dang.Designer.cs">
       <DependentUpon>F_Doan_Dang.cs</DependentUpon>
     </Compile>
     <Compile Include="F_DoiMatKhau.cs">
@@ -228,48 +228,48 @@
     <Compile Include="F_DoiMatKhau.Designer.cs">
       <DependentUpon>F_DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_GiaDinh.cs">
+    <Compile Include="QuanLyNhanSu\F_GiaDinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_GiaDinh.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_GiaDinh.Designer.cs">
       <DependentUpon>F_GiaDinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_HopDong1.cs">
+    <Compile Include="QuanLyNhanSu\F_HopDong1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_HopDong1.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_HopDong1.Designer.cs">
       <DependentUpon>F_HopDong1.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Thoiviec.cs">
+    <Compile Include="QuanLyNhanSu\F_Thoiviec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Thoiviec.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_Thoiviec.Designer.cs">
       <DependentUpon>F_Thoiviec.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_ThongTinGiangVien.cs">
+    <Compile Include="QuanLyNhanSu\F_ThongTinGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_ThongTinGiangVien.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_ThongTinGiangVien.Designer.cs">
       <DependentUpon>F_ThongTinGiangVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Tonghopthongtin.cs">
+    <Compile Include="QuanLyNhanSu\F_Tonghopthongtin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Tonghopthongtin.Designer.cs">
+    <Compile Include="QuanLyNhanSu\F_Tonghopthongtin.Designer.cs">
       <DependentUpon>F_Tonghopthongtin.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien.cs">
+    <Compile Include="QuanLyNhanSu\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien.Designer.cs">
+    <Compile Include="QuanLyNhanSu\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyPhongBan.cs">
+    <Compile Include="QuanLyNhanSu\QuanLyPhongBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyPhongBan.Designer.cs">
+    <Compile Include="QuanLyNhanSu\QuanLyPhongBan.Designer.cs">
       <DependentUpon>QuanLyPhongBan.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dangnhap.resx">
@@ -278,31 +278,31 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_BaoHiem.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_BaoHiem.resx">
       <DependentUpon>F_BaoHiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Doan_Dang.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_Doan_Dang.resx">
       <DependentUpon>F_Doan_Dang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_DoiMatKhau.resx">
       <DependentUpon>F_DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_GiaDinh.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_GiaDinh.resx">
       <DependentUpon>F_GiaDinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_HopDong1.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_HopDong1.resx">
       <DependentUpon>F_HopDong1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Thoiviec.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_Thoiviec.resx">
       <DependentUpon>F_Thoiviec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_ThongTinGiangVien.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_ThongTinGiangVien.resx">
       <DependentUpon>F_ThongTinGiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Tonghopthongtin.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\F_Tonghopthongtin.resx">
       <DependentUpon>F_Tonghopthongtin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -316,7 +316,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanLyPhongBan.resx">
+    <EmbeddedResource Include="QuanLyNhanSu\QuanLyPhongBan.resx">
       <DependentUpon>QuanLyPhongBan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
