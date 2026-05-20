@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -172,6 +173,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -210,6 +213,12 @@
     <Compile Include="F_BaoHiem.Designer.cs">
       <DependentUpon>F_BaoHiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Doan_Dang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Doan_Dang.Designer.cs">
+      <DependentUpon>F_Doan_Dang.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +236,12 @@
     </Compile>
     <Compile Include="F_HopDong1.Designer.cs">
       <DependentUpon>F_HopDong1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Thoiviec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Thoiviec.Designer.cs">
+      <DependentUpon>F_Thoiviec.cs</DependentUpon>
     </Compile>
     <Compile Include="F_ThongTinGiangVien.cs">
       <SubType>Form</SubType>
@@ -257,6 +272,9 @@
     <EmbeddedResource Include="F_BaoHiem.resx">
       <DependentUpon>F_BaoHiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_Doan_Dang.resx">
+      <DependentUpon>F_Doan_Dang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_DoiMatKhau.resx">
       <DependentUpon>F_DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_HopDong1.resx">
       <DependentUpon>F_HopDong1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Thoiviec.resx">
+      <DependentUpon>F_Thoiviec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_ThongTinGiangVien.resx">
       <DependentUpon>F_ThongTinGiangVien.cs</DependentUpon>

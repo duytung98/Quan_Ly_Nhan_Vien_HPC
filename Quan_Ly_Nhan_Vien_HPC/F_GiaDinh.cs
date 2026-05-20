@@ -39,14 +39,30 @@ namespace Quan_Ly_Nhan_Vien_HPC
             gridView.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             btn_sua.Click += Btn_sua_Click;
             btn_xoa.Click += Btn_xoa_Click;
-            //lku_nhanvien.KeyDown += lku_nhanvien_KeyDown;
-            //txt_luongcb.KeyDown += txt_luongcb_KeyDown;
-            //txt_ghichu.KeyDown += txt_ghichu_KeyDown;
-            //txt_hesoluong.KeyDown += txt_hesoluong_KeyDown;
-            //cb_loaihopdong.KeyDown += cb_loaihopdong_KeyDown;
-            //date_NgayBD.KeyDown += date_NgayBD_KeyDown;
-            //txt_chucvu.KeyDown += txt_chucvu_KeyDown;
-            //lbl_phongban.KeyDown += lbl_phongban_KeyDown;
+            lku_nhanvien.KeyDown += lku_nhanvien_KeyDown;
+            txt_tenbo.KeyDown += txt_tenbo_KeyDown;
+            date_NgaySinhBo.KeyDown += date_NgaySinhBo_KeyDown;
+                txt_nghenghiepbo.KeyDown += txt_nghenghiepbo_KeyDown;
+            txt_sdtBo.KeyDown += txt_sdtBo_KeyDown;
+            txt_me.KeyDown += txt_me_KeyDown;
+            date_me.KeyDown += date_me_KeyDown;
+            txt_NgheNghiepMe.KeyDown += txt_NgheNghiepMe_KeyDown;
+            txt_sdtMe.KeyDown += txt_sdtMe_KeyDown;
+            txt_voChong.KeyDown += txt_voChong_KeyDown;
+            txt_sdtvo.KeyDown += txt_sdtvo_KeyDown;
+            txt_ngaysinhvo.KeyDown += txt_ngaysinhvo_KeyDown;
+            txt_ngheNghiepVo.KeyDown += txt_ngheNghiepVo_KeyDown;
+            txt_tencon1.KeyDown += txt_tencon1_KeyDown;
+            date_con1.KeyDown += date_con1_KeyDown;
+            cb_hocvan1.KeyDown += cb_hocvan1_KeyDown;
+            txt_tencon2.KeyDown += txt_tencon2_KeyDown;
+            date_con2.KeyDown += date_con2_KeyDown;
+            cb_hocvan2.KeyDown += cb_hocvan2_KeyDown;
+            txt_tencon3.KeyDown += txt_tencon3_KeyDown;
+            date_con3.KeyDown += date_con3_KeyDown;
+            cb_hocvan3.KeyDown += cb_hocvan3_KeyDown;
+            txt_ghichu.KeyDown += txt_ghichu_KeyDown;
+
             if (gv_giadinh.Columns["STT"] != null)
                 gv_giadinh.Columns["STT"].Fixed =
                     DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -99,6 +115,234 @@ namespace Quan_Ly_Nhan_Vien_HPC
             date_con3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             date_con3.Properties.Mask.EditMask = "dd/MM/yyyy";
             date_con3.Properties.Mask.UseMaskAsDisplayFormat = true;
+        }
+
+        private void txt_ghichu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_them.PerformClick();
+            }
+        }
+
+        private void cb_hocvan3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_ghichu.Focus();
+            }
+        }
+
+        private void date_con3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                cb_hocvan3.Focus();
+            }
+        }
+
+        private void txt_tencon3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_con3.Focus();
+            }
+        }
+
+        private void cb_hocvan2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_tencon3.Focus();
+            }
+        }
+
+        private void date_con2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                cb_hocvan2.Focus();
+            }
+        }
+
+        private void txt_tencon2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_con2.Focus();
+            }
+        }
+
+        private void cb_hocvan1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_tencon2.Focus();
+            }
+        }
+
+        private void date_con1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                cb_hocvan1.Focus();
+            }
+        }
+
+        private void txt_tencon1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_con1.Focus();
+            }
+        }
+
+        private void txt_ngheNghiepVo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_tencon1.Focus();
+            }
+        }
+
+        private void txt_ngaysinhvo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_sdtvo.Focus();
+            }
+        }
+
+        private void txt_sdtvo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_ngheNghiepVo.Focus();
+            }
+        }
+
+        private void txt_voChong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_ngaysinhvo.Focus();
+            }
+        }
+
+        private void txt_sdtMe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_NgheNghiepMe.Focus();
+            }
+        }
+
+        private void txt_NgheNghiepMe_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_voChong.Focus();
+            }
+        }
+
+        private void date_me_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_sdtMe.Focus();
+            }
+        }
+
+        private void txt_me_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_me.Focus();
+            }
+        }
+
+        private void txt_sdtBo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_nghenghiepbo.Focus();
+            }
+        }
+
+        private void date_NgaySinhBo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_sdtBo.Focus();
+            }
+        }
+
+        private void txt_nghenghiepbo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_me.Focus();
+            }
+        }
+
+        private void txt_tenbo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                date_NgaySinhBo.Focus();
+            }
+        }
+
+        private void lku_nhanvien_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
+
+                txt_tenbo.Focus();
+            }
         }
 
         private void Btn_xoa_Click(object sender, EventArgs e)

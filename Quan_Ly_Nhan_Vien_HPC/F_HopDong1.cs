@@ -248,8 +248,6 @@ VALUES
             this.lbl_phgban1.DisplayMember = "TenPhongBan";
             this.lbl_phgban1.ValueMember = "id";
 
-
-
         }
 
         private void F_HopDong1_Load(object sender, EventArgs e)

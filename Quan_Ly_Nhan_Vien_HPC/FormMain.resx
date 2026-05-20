@@ -185,27 +185,6 @@
         Ljh6IiBjbGFzcz0iQmx1ZSIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="KhenThuong.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAmdEVYdFRpdGxlAENvbnRhY3Q7Q2FyZDtJbmZvO0Rl
-        dGFpbDtQZXJzb247MubyWQAAAH5JREFUOE9j+P//PwMlmKGlpeU/JRhsALmANgYcvnHxf/umJWAaWSEy
-        RhbHMACkuWz5dDBNCBBtAEkuwOYFXADDgBvPHv1fcmTX/9rVc8A0iA9TSJQL5hzYAnY+DIP4+ACGAY3r
-        5qMYAOLDFBLlAlIB9QygBGPkLlIxhgCpGABBBkxLWc2rfwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="KhenThuong.ImageOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAmdEVYdFRpdGxlAENvbnRhY3Q7Q2FyZDtJbmZvO0Rl
-        dGFpbDtQZXJzb247MubyWQAAAOdJREFUWEftk7EKwjAURfvV+gF2FpzqKghacOgmim6KODkIDsXBL3AQ
-        9yev0BDeiyTVeuPQCwfC7aM5bdOEiJKYqAKNKtCoAo0q0KgCjVmkaUpInAKodAKNBPblmUarRQWv20iw
-        wOlWUn8+pt4sq+A1dzLygLmQ80EC093abF7D3bcJFhgUEyXAnYx8WhdyPkgg+huIfgY4fPJrAdhfcH8+
-        6Hi9UH7Y0nCZGwFec8fXeMa+oQ87XoFsU6hvL+GZT+MVkJu9w76hDzutCzSNV+DX6QT+VwCJEoiFKtCo
-        Ao0q0KgCjSrQvABRzgeDbwvIJQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="DieuChuyen.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v22.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIyLjIsIFZlcnNpb249MjIuMi4z
@@ -508,6 +487,7 @@
         Zz4NCjwvc3ZnPgs=
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_monday.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m

@@ -825,7 +825,12 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         private void btn_dong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            DialogResult dr;
+            dr = XtraMessageBox.Show("Bạn có muốn đóng trang không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

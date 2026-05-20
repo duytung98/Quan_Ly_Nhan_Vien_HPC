@@ -125,5 +125,15 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             openForm(typeof(F_GiaDinh));
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(F_Doan_Dang));
+        }
+
+        private void ThoiViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(F_Thoiviec));
+        }
     }
 }
