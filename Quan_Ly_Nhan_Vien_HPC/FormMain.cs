@@ -77,7 +77,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            
+            loadSinhNhat();
         }
 
         private void DoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -134,6 +134,22 @@ namespace Quan_Ly_Nhan_Vien_HPC
         private void ThoiViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(typeof(F_Thoiviec));
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(F_Tonghopthongtin));
+        }
+        void loadSinhNhat()
+        {
+            ls_sinhnhat.DataSource = ConnectData.getdata("SELECT \r\n    id, \r\n    CONCAT(HoDem, ' ', Ten) AS HoTen,\r\n    DATE_FORMAT(NgaySinh, '%d/%m/%Y') AS NgaySinh\r\nFROM NHANVIEN \r\nWHERE MONTH(NgaySinh) = MONTH(CURDATE())");
+            ls_sinhnhat.DisplayMember = "HoTen";
+            ls_sinhnhat.ValueMember = "id";
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

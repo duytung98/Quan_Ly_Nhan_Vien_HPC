@@ -249,6 +249,12 @@
     <Compile Include="F_ThongTinGiangVien.Designer.cs">
       <DependentUpon>F_ThongTinGiangVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Tonghopthongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Tonghopthongtin.Designer.cs">
+      <DependentUpon>F_Tonghopthongtin.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_ThongTinGiangVien.resx">
       <DependentUpon>F_ThongTinGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Tonghopthongtin.resx">
+      <DependentUpon>F_Tonghopthongtin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
