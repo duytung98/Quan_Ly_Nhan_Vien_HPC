@@ -379,9 +379,20 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             try
             {
-                SaveFileDialog save = new SaveFileDialog();
+                //SaveFileDialog save = new SaveFileDialog();
 
-                save.Filter = "Excel File|*.xlsx";
+                //save.Filter = "Excel File|*.xlsx";
+                SaveFileDialog save =
+                    new SaveFileDialog();
+
+                save.Filter =
+                    "Excel Workbook|*.xlsx";
+
+                save.Title =
+                    "Xuất Excel";
+
+                save.FileName =
+                    "DanhSachThongTinNhanVien.xlsx";
 
                 if (save.ShowDialog() != DialogResult.OK)
                     return;
