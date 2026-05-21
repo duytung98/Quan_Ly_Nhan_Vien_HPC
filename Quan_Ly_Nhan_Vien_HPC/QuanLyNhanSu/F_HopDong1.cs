@@ -220,6 +220,7 @@ VALUES
 
                 MessageBox.Show(
                     "Thêm hợp đồng thành công");
+                LogSystem.WriteLog("Nhân viên", "THÊM", "Thêm hợp đồng cho nhân viên ID: " + nhanVienID + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
 
             }
@@ -235,7 +236,7 @@ VALUES
             clearForm();
             Loadnhanvien();
         }
-
+        DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
         private void btn_lammoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             load_hopdong();
@@ -442,8 +443,9 @@ VALUES
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "XÓA", "Xóa hợp đồng: " + soHopDong + " của nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
-                
+
             }
             catch (MySqlException ex)
             {
@@ -578,8 +580,9 @@ VALUES
 
                 MessageBox.Show(
                     "Sửa hợp đồng thành công");
+                LogSystem.WriteLog("Nhân viên", "SỬA", "Sửa hợp đồng cho nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
-                
+
             }
             catch (Exception ex)
             {

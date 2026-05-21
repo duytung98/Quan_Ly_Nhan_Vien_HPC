@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Runtime.InteropServices;
 
 namespace Quan_Ly_Nhan_Vien_HPC
 {
@@ -138,8 +139,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "Xóa", "Xóa nhân viên ID: " + maNV + " - " + hoTen + " - " + Login.txt_taikhoan.Text);
 
-                
             }
             catch (Exception ex)
             {
@@ -345,7 +346,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 MessageBox.Show("Sửa thành công thông tin nhân viên:\n"+ maNV + " - " + hoTen,"Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-
+                LogSystem.WriteLog(    "Nhân viên",    "SỬA",    "Sửa nhân viên ID: " + maNV + " - " + hoTen + " - " + Login.txt_taikhoan.Text);
 
             }
             catch (MySqlException ex)

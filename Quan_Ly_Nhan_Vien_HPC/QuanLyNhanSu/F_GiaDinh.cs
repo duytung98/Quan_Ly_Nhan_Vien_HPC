@@ -408,6 +408,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                         "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    LogSystem.WriteLog("Nhân viên", "Xóa", "Xóa thông tin gia đình của nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
                 }
                 else
                 {
@@ -717,6 +718,7 @@ WHERE Id=@Id";
 
                 MessageBox.Show(
                     "Sửa thông tin gia đình thành công");
+                LogSystem.WriteLog("Nhân viên", "SỬA", "Sửa thông tin gia đình cho nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
             }
             catch (Exception ex)
             {
@@ -1186,6 +1188,7 @@ VALUES
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "THÊM", "Thêm thông tin gia đình cho nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
             }
             catch (Exception ex)
@@ -1201,6 +1204,7 @@ VALUES
             clearForm();
 
         }
+        DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
         void clearForm()
         {
             lku_nhanvien.EditValue = null;

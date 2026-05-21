@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.XtraEditors.Mask.MaskSettings;
 
 namespace Quan_Ly_Nhan_Vien_HPC
 {
@@ -15,10 +16,33 @@ namespace Quan_Ly_Nhan_Vien_HPC
         public static MySqlConnection conn = new MySqlConnection();
 
         // 🔹 Hàm tạo kết nối
+        // ===== MYSQL CONFIG =====
+        public static string server =
+            "103.126.161.228";
+
+        public static string port =
+            "3306";
+
+        public static string database =
+            "nhom2tungteacher";
+
+        public static string user =
+            "nhom2tungteacher";
+
+        public static string password =
+            "wmGKhzF6njWT";
         public static void taoketnoi()
         {
-            conn.ConnectionString = "Server = localhost;port=3306; Database = quanlynhansu;UId = root;Pwd = root;Pooling = false;Character Set=utf8";
 
+            //conn.ConnectionString = "Server = 103.126.161.228;port=3306; Database = nhom2tungteacher;UId = nhom2tungteacher;Pwd = wmGKhzF6njWT;Pooling = false;Character Set=utf8";
+            conn.ConnectionString =
+                $"Server={server};" +
+                $"Port={port};" +
+                $"Database={database};" +
+                $"Uid={user};" +
+                $"Pwd={password};" +
+                $"Pooling=false;" +
+                $"Character Set=utf8;";
             try
             {
                 if (conn.State != ConnectionState.Open)

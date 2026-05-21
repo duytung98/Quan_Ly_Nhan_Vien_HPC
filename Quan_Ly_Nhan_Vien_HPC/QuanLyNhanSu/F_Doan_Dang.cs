@@ -212,6 +212,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "THÊM", "Thêm thông tin đảng cho nhân viên ID: " + MaNV + " - " + HoTen);
             }
             catch (Exception ex)
             {
@@ -414,6 +415,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                         "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    LogSystem.WriteLog("Nhân viên", "Xóa", "Xóa thông tin đảng của nhân viên ID: " + MaNV + " - " + HoTen);
                 }
                 else
                 {
@@ -572,6 +574,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "SỬA", "Sửa thông tin đảng cho nhân viên ID: " + MaNV + " - " + HoTen);
             }
             catch (Exception ex)
             {

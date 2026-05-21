@@ -193,8 +193,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "Xóa", "Xóa bảo hiểm của nhân viên ID: "  + hoTen + " - " + Login.txt_taikhoan.Text);
 
-                
             }
             catch (MySqlException ex)
             {
@@ -350,8 +350,9 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "SỬA", "Sửa bảo hiểm cho nhân viên ID: " + hoTen + " - " + Login.txt_taikhoan.Text);
 
-                
+
             }
             catch (Exception ex)
             {
@@ -806,7 +807,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
             load_baohiem();
             Loadnhanvien();
         }
-
+        DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
         private void btn_themBH_Click(object sender, EventArgs e)
         {
             // ===== Kiểm tra =====
@@ -955,6 +956,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                LogSystem.WriteLog("Nhân viên", "THÊM", "Thêm bảo hiểm cho nhân viên: "  + hoTen + " - " + Login.txt_taikhoan.Text);
 
 
             }

@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,6 +78,9 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             loadSinhNhat();
             ls_sinhnhat.CustomizeItem += ls_sinhnhat_CustomizeItem;
+            ribbonControl1.SelectedPage = NhanSu;
+            AutoBackup.BackupDatabase();
+
         }
 
         private void ls_sinhnhat_CustomizeItem(object sender, CustomizeTemplatedItemEventArgs e)
@@ -156,6 +161,110 @@ namespace Quan_Ly_Nhan_Vien_HPC
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_backupdulieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog save =
+                    new SaveFileDialog();
+
+                save.Filter =
+                    "SQL File|*.sql";
+
+                save.Title =
+                    "Backup dữ liệu";
+
+                save.FileName =
+                    "Backup_QuanLyNhanSu.sql";
+
+                if (save.ShowDialog() != DialogResult.OK)
+                    return;
+
+                // ===== MYSQL INFO =====
+                string host = ConnectData.server;
+
+                string port = ConnectData.port;
+
+                string database = ConnectData.database;
+
+                string user = ConnectData.user;
+
+                string password = ConnectData.password;
+                    
+
+                // ===== LINUX MYSQLDUMP =====
+                string mysqldump = @"C:\xampp\mysql\bin\mysqldump.exe";
+
+                // ===== ARGUMENT =====
+                string arguments =
+                    $"-h {host} -P {port} -u {user} -p{password} {database} --result-file=\"{save.FileName}\"";
+
+                ProcessStartInfo psi =
+                    new ProcessStartInfo();
+
+                psi.FileName =
+                    mysqldump;
+
+                psi.Arguments =
+                    arguments;
+
+                psi.RedirectStandardError =
+                    true;
+
+                psi.RedirectStandardOutput =
+                    true;
+
+                psi.UseShellExecute =
+                    false;
+
+                psi.CreateNoWindow =
+                    true;
+
+                Process process =
+                    new Process();
+
+                process.StartInfo =
+                    psi;
+
+                process.Start();
+
+                process.WaitForExit();
+
+                MessageBox.Show(
+                    "Backup dữ liệu thành công",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_log_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                string folder =
+                    Application.StartupPath + @"\Logs";
+
+                if (!Directory.Exists(folder))
+                {
+                    MessageBox.Show(
+                        "Chưa có log");
+
+                    return;
+                }
+
+                System.Diagnostics.Process.Start(folder);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

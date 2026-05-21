@@ -25,7 +25,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         public void loadPhongBan()
         {
-            gc_phongban.DataSource = ConnectData.getdata("SELECT * FROM phongban order by(id) desc;");
+            gc_phongban.DataSource = ConnectData.getdata("SELECT * FROM PHONGBAN order by(id) desc;");
         }
         private void QuanLyPhongBan_Load(object sender, EventArgs e)
         {
@@ -104,8 +104,10 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Xóa thành công");
+                LogSystem.WriteLog("Phòng ban", "XÓA", "Xóa phòng ban: " + MaPhongBan + " - " + TenPhongBan + " - " + Login.txt_taikhoan.Text);
 
-                
+
+
             }
             catch (MySqlException ex)
             {
@@ -190,6 +192,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
+                    LogSystem.WriteLog("Phòng ban", "SỬA", "Sửa phòng ban: " + maPhongBan + " - " + tenPhongBan + " - " + Login.txt_taikhoan.Text);
+
                 }
 
                 MessageBox.Show("Sửa thành công");
@@ -309,6 +313,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                
+                LogSystem.WriteLog("Phòng ban", "THÊM", "Thêm phòng ban: " + maPhongBan + " - " + tenPhongBan + " - " + Login.txt_taikhoan.Text);
 
                 // Load lại grid
                 
@@ -332,7 +338,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
             }
             loadPhongBan();
         }
-
+        DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
         private void btn_lammoi_Click(object sender, EventArgs e)
         {
             txt_mapb.Clear();

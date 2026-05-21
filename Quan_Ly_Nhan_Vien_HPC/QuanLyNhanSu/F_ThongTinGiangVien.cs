@@ -610,6 +610,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Thêm nhân viên thành công\nMã NV: " + maNV);
+                LogSystem.WriteLog("Nhân viên","THÊM","Thêm nhân viên: " + maNV + " - " + Login.txt_taikhoan.Text);
                 clearForm();
                 
             }

@@ -197,6 +197,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoBackup.cs" />
     <Compile Include="ConnectData.cs" />
     <Compile Include="Dangnhap.cs">
       <SubType>Form</SubType>
@@ -210,6 +211,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogSystem.cs" />
     <Compile Include="QuanLyNhanSu\F_BaoHiem.cs">
       <SubType>Form</SubType>
     </Compile>

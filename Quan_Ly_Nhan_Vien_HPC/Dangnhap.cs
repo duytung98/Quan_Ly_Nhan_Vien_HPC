@@ -88,6 +88,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     // Ẩn form login
                     this.Hide();
                     temp = txt_taikhoan.Text;
+                    LogSystem.CurrentUser = txt_taikhoan.Text;
                 }
                 else
                 {
