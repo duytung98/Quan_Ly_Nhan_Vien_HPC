@@ -362,5 +362,8 @@
   <ItemGroup>
     <None Include="Resources\doandang-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,7 +37,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true; // chặn tiếng beep + mất chữ
-                
+
                 txt__matkhau.Focus();
             }
         }
@@ -125,26 +125,21 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         private void btn_thoat_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult rs = MessageBox.Show(
-       "Bạn có muốn thoát chương trình không?",
-       "Thông báo",
-       MessageBoxButtons.YesNo,
-       MessageBoxIcon.Question);
+            DialogResult rs =
+         MessageBox.Show(
+             "Bạn có muốn thoát chương trình không?",
+             "Thông báo",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question);
 
             if (rs == DialogResult.No)
             {
-                // Hủy thoát
                 e.Cancel = true;
-            }
-            else
-            {
-                // Thoát toàn bộ chương trình
-                Application.Exit();
             }
         }
     }

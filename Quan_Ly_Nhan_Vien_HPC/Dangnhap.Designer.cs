@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.btn_dangnhap = new System.Windows.Forms.Button();
             this.txt__matkhau = new System.Windows.Forms.TextBox();
             this.txt_taikhoan = new System.Windows.Forms.TextBox();
@@ -49,10 +50,10 @@
             this.btn_dangnhap.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
             this.btn_dangnhap.ForeColor = System.Drawing.Color.White;
             this.btn_dangnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dangnhap.Location = new System.Drawing.Point(357, 276);
+            this.btn_dangnhap.Location = new System.Drawing.Point(476, 340);
             this.btn_dangnhap.Margin = new System.Windows.Forms.Padding(0);
             this.btn_dangnhap.Name = "btn_dangnhap";
-            this.btn_dangnhap.Size = new System.Drawing.Size(158, 44);
+            this.btn_dangnhap.Size = new System.Drawing.Size(211, 54);
             this.btn_dangnhap.TabIndex = 13;
             this.btn_dangnhap.Text = "Đăng nhập";
             this.btn_dangnhap.UseVisualStyleBackColor = false;
@@ -61,20 +62,22 @@
             // txt__matkhau
             // 
             this.txt__matkhau.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt__matkhau.Location = new System.Drawing.Point(319, 175);
+            this.txt__matkhau.Location = new System.Drawing.Point(425, 215);
+            this.txt__matkhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt__matkhau.Multiline = true;
             this.txt__matkhau.Name = "txt__matkhau";
             this.txt__matkhau.PasswordChar = '*';
-            this.txt__matkhau.Size = new System.Drawing.Size(269, 29);
+            this.txt__matkhau.Size = new System.Drawing.Size(357, 35);
             this.txt__matkhau.TabIndex = 12;
             // 
             // txt_taikhoan
             // 
             this.txt_taikhoan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_taikhoan.Location = new System.Drawing.Point(319, 121);
+            this.txt_taikhoan.Location = new System.Drawing.Point(425, 149);
+            this.txt_taikhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_taikhoan.Multiline = true;
             this.txt_taikhoan.Name = "txt_taikhoan";
-            this.txt_taikhoan.Size = new System.Drawing.Size(269, 29);
+            this.txt_taikhoan.Size = new System.Drawing.Size(357, 35);
             this.txt_taikhoan.TabIndex = 11;
             // 
             // label1
@@ -84,9 +87,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(171, 26);
+            this.label1.Location = new System.Drawing.Point(228, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(451, 42);
+            this.label1.Size = new System.Drawing.Size(571, 53);
             this.label1.TabIndex = 15;
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -95,9 +99,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(198, 126);
+            this.label2.Location = new System.Drawing.Point(264, 155);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 24);
+            this.label2.Size = new System.Drawing.Size(134, 31);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tài khoản";
             // 
@@ -106,28 +111,30 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(198, 180);
+            this.label3.Location = new System.Drawing.Point(264, 222);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 24);
+            this.label3.Size = new System.Drawing.Size(128, 31);
             this.label3.TabIndex = 17;
             this.label3.Text = "Mật khẩu";
             // 
             // ckc_hienthimk
             // 
-            this.ckc_hienthimk.Location = new System.Drawing.Point(319, 223);
+            this.ckc_hienthimk.Location = new System.Drawing.Point(425, 274);
+            this.ckc_hienthimk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ckc_hienthimk.Name = "ckc_hienthimk";
             this.ckc_hienthimk.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckc_hienthimk.Properties.Appearance.Options.UseFont = true;
             this.ckc_hienthimk.Properties.Caption = "Hiển thị mật khẩu";
-            this.ckc_hienthimk.Size = new System.Drawing.Size(134, 20);
+            this.ckc_hienthimk.Size = new System.Drawing.Size(179, 24);
             this.ckc_hienthimk.TabIndex = 18;
             this.ckc_hienthimk.CheckedChanged += new System.EventHandler(this.ckc_hienthimk_CheckedChanged);
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 385);
+            this.ClientSize = new System.Drawing.Size(1044, 474);
             this.Controls.Add(this.ckc_hienthimk);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -135,6 +142,8 @@
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txt__matkhau);
             this.Controls.Add(this.txt_taikhoan);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
