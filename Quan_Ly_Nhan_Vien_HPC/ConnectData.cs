@@ -17,20 +17,19 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
         // 🔹 Hàm tạo kết nối
         // ===== MYSQL CONFIG =====
-        public static string server =
-            "103.126.161.228";
+        //public static string server = "103.126.161.228";
+        //public static string port = "3306";
+        //public static string database = "nhom2tungteacher";
+        //public static string user = "nhom2tungteacher";
+        //public static string password = "wmGKhzF6njWT";
 
-        public static string port =
-            "3306";
+        public static string server = "localhost";
+        public static string port = "3306";
+        public static string database = "quanlynhansu";
+        public static string user = "root";
+        public static string password = "root";
 
-        public static string database =
-            "nhom2tungteacher";
 
-        public static string user =
-            "nhom2tungteacher";
-
-        public static string password =
-            "wmGKhzF6njWT";
         public static void taoketnoi()
         {
 

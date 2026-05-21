@@ -248,18 +248,17 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             try
             {
-                string folder =
-                    Application.StartupPath + @"\Logs";
-
-                if (!Directory.Exists(folder))
+                if (!Directory.Exists(LogSystem.LogFolder))
                 {
                     MessageBox.Show(
-                        "Chưa có log");
+                        "Chưa có dữ liệu log");
 
                     return;
                 }
 
-                System.Diagnostics.Process.Start(folder);
+                System.Diagnostics.Process.Start(
+                    "explorer.exe",
+                    LogSystem.LogFolder);
             }
             catch (Exception ex)
             {

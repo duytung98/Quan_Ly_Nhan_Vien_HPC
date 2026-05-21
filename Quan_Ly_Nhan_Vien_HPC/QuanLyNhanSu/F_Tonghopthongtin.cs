@@ -101,6 +101,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 {
                     MessageBox.Show(
                         "Không có dữ liệu để xuất");
+
                     return;
                 }
 
@@ -119,7 +120,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 if (save.ShowDialog() != DialogResult.OK)
                     return;
 
-                // ===== Khởi tạo Excel =====
+                // ===== KHỞI TẠO EXCEL =====
                 Microsoft.Office.Interop.Excel.Application app =
                     new Microsoft.Office.Interop.Excel.Application();
 
@@ -162,14 +163,14 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     string tenCot =
                         gv_nhanvien.Columns[i].FieldName;
 
-                    // ===== Bỏ cột id =====
+                    // ===== BỎ CỘT ID =====
                     if (tenCot == "id")
                         continue;
 
                     ws.Cells[3, colExcel] =
                         gv_nhanvien.Columns[i].Caption;
 
-                    // ===== Style Header =====
+                    // ===== STYLE =====
                     ws.Cells[3, colExcel].Font.Bold =
                         true;
 
@@ -179,8 +180,9 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     ws.Cells[3, colExcel].Interior.Color =
                         System.Drawing.Color.LightGray;
 
-                    // ===== Ép TEXT =====
-                    ws.Columns[colExcel].NumberFormat = "@";
+                    // ===== FORMAT TEXT =====
+                    ws.Columns[colExcel].NumberFormat =
+                        "@";
 
                     colExcel++;
                 }
@@ -195,7 +197,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                         string tenCot =
                             gv_nhanvien.Columns[j].FieldName;
 
-                        // ===== Bỏ id =====
+                        // ===== BỎ CỘT ID =====
                         if (tenCot == "id")
                             continue;
 
@@ -204,24 +206,48 @@ namespace Quan_Ly_Nhan_Vien_HPC
                                 i,
                                 gv_nhanvien.Columns[j]);
 
-                        // ===== Nếu là ngày =====
-                        if (value != null &&
-                            DateTime.TryParse(
-                                value.ToString(),
-                                out DateTime ngay))
+                        // ===== NULL =====
+                        if (value == null ||
+                            value == DBNull.Value)
                         {
-                            // Chỉ lấy ngày tháng năm
-                            ws.Cells[i + 4, colExcel] =
-                                "'" + ngay.ToString("dd/MM/yyyy");
+                            ws.Cells[i + 4, colExcel] = "";
                         }
                         else
                         {
-                            // ===== Chuyển tất cả sang TEXT =====
-                            ws.Cells[i + 4, colExcel] =
-                                "'" + value?.ToString();
+                            // ===== CHECK CỘT NGÀY =====
+                            if
+                            (
+                                tenCot == "NgaySinh"
+                                || tenCot == "NgayCapCCCD"
+                                || tenCot == "CREATEO_DATE"
+                                || tenCot == "UPDATEO_DATE"
+                                || tenCot == "DELETEO_DATE"
+                                || tenCot == "NgayBD"
+                                || tenCot == "NgayChinhThucVaoDang"
+                                || tenCot == "NGAYVAODANG"
+                                || tenCot == "NGAYVAODOAN"
+                                || tenCot == "NgaySinhBo"
+                                || tenCot == "NgaySinhMe"
+                                || tenCot == "NgaySinhVo_Chong"
+                                || tenCot == "NgaySinhCon1"
+                                || tenCot == "NgaySinhCon2"
+                                || tenCot == "NgaySinhCon3"
+                                || tenCot == "NgayCap"
+                            )
+                            {
+                                ws.Cells[i + 4, colExcel] =
+                                    Convert.ToDateTime(value)
+                                    .ToString("dd/MM/yyyy");
+                            }
+                            else
+                            {
+                                // ===== GIỮ NGUYÊN DỮ LIỆU =====
+                                ws.Cells[i + 4, colExcel] =
+                                    value.ToString();
+                            }
                         }
 
-                        // ===== Border =====
+                        // ===== BORDER =====
                         ws.Cells[i + 4, colExcel]
                             .Borders.LineStyle = 1;
 
@@ -229,25 +255,27 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     }
                 }
 
-                // ===== Căn giữa =====
+                // ===== CĂN GIỮA =====
                 ws.Range["A3",
                     ws.Cells[dong + 3, colExcel - 1]]
                     .HorizontalAlignment =
                     Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
-                // ===== AutoFit =====
+                // ===== AUTOFIT =====
                 ws.Columns.AutoFit();
 
-                // ===== Lưu file =====
+                // ===== LƯU FILE =====
                 wb.SaveAs(save.FileName);
 
-                wb.Close();
+                wb.Close(false);
 
                 app.Quit();
 
-                // ===== Giải phóng bộ nhớ =====
+                // ===== GIẢI PHÓNG BỘ NHỚ =====
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(ws);
+
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(wb);
+
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
 
                 MessageBox.Show(
@@ -256,7 +284,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                // ===== Mở file =====
+                // ===== MỞ FILE =====
                 System.Diagnostics.Process.Start(save.FileName);
             }
             catch (Exception ex)

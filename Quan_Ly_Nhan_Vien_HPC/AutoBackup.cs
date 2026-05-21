@@ -19,16 +19,19 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 if (DateTime.Now.Day != 1)
                     return;
 
-                // ===== Folder Backup =====
+                // ===== FOLDER BACKUP =====
                 string folder =
-                    Application.StartupPath + @"\Backup";
+                    Environment.GetFolderPath(
+                        Environment.SpecialFolder.CommonDocuments)
+                    + @"\HPC_Backup";
 
+                // ===== TẠO THƯ MỤC =====
                 if (!Directory.Exists(folder))
                 {
                     Directory.CreateDirectory(folder);
                 }
 
-                // ===== Tên file =====
+                // ===== TÊN FILE =====
                 string fileName =
                     "Backup_"
                     + DateTime.Now.ToString("yyyyMMdd")
@@ -37,7 +40,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                 string fullPath =
                     Path.Combine(folder, fileName);
 
-                // ===== Nếu đã backup rồi =====
+                // ===== NẾU ĐÃ BACKUP =====
                 if (File.Exists(fullPath))
                     return;
 
@@ -108,8 +111,6 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     "AUTO BACKUP",
                     "Backup tự động ngày 1");
 
-                //MessageBox.Show(
-                //    "Backup dữ liệu tự động thành công");
             }
             catch (Exception ex)
             {

@@ -419,7 +419,7 @@
             // btn_them
             // 
             this.btn_them.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btn_them.Caption = "Thêm hợp đồng";
+            this.btn_them.Caption = "Thêm dữ liệu";
             this.btn_them.Id = 0;
             this.btn_them.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_them.ImageOptions.SvgImage")));
             this.btn_them.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
@@ -648,7 +648,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(1158, 423);
             this.groupControl2.TabIndex = 8;
-            this.groupControl2.Text = "Danh sách bảo hiểm";
+            this.groupControl2.Text = "Danh sách đoàn - đảng";
             // 
             // gc_dang
             // 

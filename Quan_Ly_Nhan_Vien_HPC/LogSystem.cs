@@ -10,8 +10,15 @@ namespace Quan_Ly_Nhan_Vien_HPC
 {
     public class LogSystem
     {
-        // ===== USER ĐĂNG NHẬP =====
+
+        // ===== USER LOGIN =====
         public static string CurrentUser = "";
+
+        // ===== PATH LOG =====
+        public static string LogFolder =
+            Environment.GetFolderPath(
+                Environment.SpecialFolder.CommonDocuments)
+            + @"\HPC_Logs";
 
         // ===== GHI LOG =====
         public static void WriteLog(
@@ -21,25 +28,24 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             try
             {
-                string folder =
-                    Application.StartupPath + @"\Logs";
-
-                // ===== Tạo thư mục Logs =====
-                if (!Directory.Exists(folder))
+                // ===== TẠO THƯ MỤC =====
+                if (!Directory.Exists(LogFolder))
                 {
-                    Directory.CreateDirectory(folder);
+                    Directory.CreateDirectory(LogFolder);
                 }
 
-                // ===== File theo ngày =====
+                // ===== FILE THEO NGÀY =====
                 string fileName =
                     DateTime.Now.ToString("yyyyMMdd")
                     + ".txt";
 
-                string path =
-                    folder + @"\" + fileName;
+                string fullPath =
+                    Path.Combine(
+                        LogFolder,
+                        fileName);
 
                 using (StreamWriter sw =
-                    new StreamWriter(path, true))
+                    new StreamWriter(fullPath, true))
                 {
                     sw.WriteLine(
                         "================================================");
