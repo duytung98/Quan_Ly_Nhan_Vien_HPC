@@ -372,7 +372,7 @@
             this.groupControl1.Controls.Add(this.gc_nhanvien);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 52);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1435, 679);
             this.groupControl1.TabIndex = 5;
@@ -721,7 +721,7 @@
             this.ChungChiKhac.AppearanceCell.Options.UseFont = true;
             this.ChungChiKhac.AppearanceHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.ChungChiKhac.AppearanceHeader.Options.UseFont = true;
-            this.ChungChiKhac.Caption = "Chứng chỉ khác";
+            this.ChungChiKhac.Caption = "Hồ sơ khác";
             this.ChungChiKhac.FieldName = "ChungChiKhac";
             this.ChungChiKhac.MinWidth = 23;
             this.ChungChiKhac.Name = "ChungChiKhac";
@@ -907,7 +907,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVien";
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.NhanVien_Load);

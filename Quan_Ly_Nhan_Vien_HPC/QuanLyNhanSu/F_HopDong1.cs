@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -28,7 +29,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
         {
             try
             {
-                // ===== Kiểm tra trống =====
+                // ===== KIỂM TRA TRỐNG =====
                 if (lku_nhanvien.EditValue == null)
                 {
                     MessageBox.Show(
@@ -93,7 +94,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     Convert.ToInt32(
                         lku_nhanvien.EditValue);
 
-                // ===== Check mỗi nhân viên chỉ có 1 hợp đồng =====
+                // ===== CHECK MỖI NHÂN VIÊN 1 HỢP ĐỒNG =====
                 string sqlCheck =
                     "SELECT COUNT(*) FROM HOPDONG WHERE NhanVien_id=@NhanVien_id";
 
@@ -118,7 +119,7 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     return;
                 }
 
-                // ===== Tạo số hợp đồng =====
+                // ===== TẠO SỐ HỢP ĐỒNG =====
                 int stt = 1;
 
                 string nam =
@@ -126,8 +127,8 @@ namespace Quan_Ly_Nhan_Vien_HPC
 
                 string sqlSoHD =
                     @"SELECT COUNT(*) + 1
-              FROM HOPDONG
-              WHERE YEAR(NgayBD)=YEAR(NOW())";
+          FROM HOPDONG
+          WHERE YEAR(NgayBD)=YEAR(NOW())";
 
                 MySqlCommand cmdSoHD =
                     new MySqlCommand(
@@ -144,32 +145,59 @@ namespace Quan_Ly_Nhan_Vien_HPC
                     + nam
                     + "/HĐLĐ";
 
-                // ===== Insert =====
+
+                // ===== Convert ngày sinh vợ/chồng =====
+                DateTime ngayKT = DateTime.MinValue;
+
+                if (!string.IsNullOrWhiteSpace(
+                    txt_ngayKT.Text))
+                {
+                    bool checkNgayKT =
+                        DateTime.TryParseExact(
+                            txt_ngayKT.Text.Trim(),
+                            "dd/MM/yyyy",
+                            CultureInfo.InvariantCulture,
+                            DateTimeStyles.None,
+                            out ngayKT);        
+                    if (!checkNgayKT)
+                    {
+                        MessageBox.Show(
+                            "Ngày kết thúc không đúng định dạng dd/MM/yyyy");
+
+                        txt_ngayKT.Focus();
+                        return;
+                    }
+                }
+                
+
+                // ===== INSERT =====
                 string sql = @"
-INSERT INTO HOPDONG
-(
-    NhanVien_id,
-    So_HopDong,
-    NgayBD,
-    LoaiHopDong,
-    PhongBan_ID,
-    ChucVu,
-    LuongCB,
-    HeSoLuong,
-    GhiChu
-)
-VALUES
-(
-    @NhanVien_id,
-    @So_HopDong,
-    @NgayBD,
-    @LoaiHopDong,
-    @PhongBan_ID,
-    @ChucVu,
-    @LuongCB,
-    @HeSoLuong,
-    @GhiChu
-)";
+    INSERT INTO HOPDONG
+    (
+        NhanVien_id,
+        So_HopDong,
+        NgayBD,
+        NgayKT,
+        LoaiHopDong,
+        PhongBan_ID,
+        ChucVu,
+        LuongCB,
+        HeSoLuong,
+        GhiChu
+    )
+    VALUES
+    (
+        @NhanVien_id,
+        @So_HopDong,
+        @NgayBD,
+        @NgayKT,
+        @LoaiHopDong,
+        @PhongBan_ID,
+        @ChucVu,
+        @LuongCB,
+        @HeSoLuong,
+        @GhiChu
+    )";
 
                 MySqlCommand cmd =
                     new MySqlCommand(
@@ -186,11 +214,16 @@ VALUES
 
                 cmd.Parameters.AddWithValue(
                     "@NgayBD",
-                    date_NgayBD.Value);
+                    date_NgayBD.Value.Date);
+
+                cmd.Parameters.AddWithValue(
+                    "@NgayKT",
+                    ngayKT);
 
                 cmd.Parameters.AddWithValue(
                     "@LoaiHopDong",
                     cb_loaihopdong.Text);
+
                 cmd.Parameters.AddWithValue(
                     "@PhongBan_ID",
                     lbl_phongban.EditValue);
@@ -220,9 +253,14 @@ VALUES
 
                 MessageBox.Show(
                     "Thêm hợp đồng thành công");
-                LogSystem.WriteLog("Nhân viên", "THÊM", "Thêm hợp đồng cho nhân viên ID: " + nhanVienID + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
-
+                LogSystem.WriteLog(
+                    "Hợp đồng",
+                    "THÊM",
+                    "Thêm hợp đồng cho nhân viên ID: "
+                    + nhanVienID
+                    + " - "
+                    + HoTen);
             }
             catch (Exception ex)
             {
@@ -232,8 +270,11 @@ VALUES
             {
                 ConnectData.dongketnoi();
             }
+
             load_hopdong();
+
             clearForm();
+
             Loadnhanvien();
         }
         DangNhap Login = (DangNhap)Application.OpenForms["DangNhap"];
@@ -310,6 +351,10 @@ VALUES
             gv_hopdong.VertScrollVisibility =
                 DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             gv_hopdong.Columns["HoTen"].Width = 200;
+
+            txt_ngayKT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            txt_ngayKT.Properties.Mask.EditMask = "dd/MM/yyyy";
+            txt_ngayKT.Properties.Mask.UseMaskAsDisplayFormat = true;
         }
 
         private void lbl_phongban_KeyDown(object sender, KeyEventArgs e)
@@ -496,7 +541,15 @@ VALUES
                     Convert.ToInt32(
                         gv_hopdong.GetFocusedRowCellValue("Id"));
 
-                // ===== Lấy dữ liệu từ GridView =====
+                // ===== LẤY DỮ LIỆU TỪ GRIDVIEW =====
+                string maNV =
+                    Convert.ToString(
+                        gv_hopdong.GetFocusedRowCellValue("MaNV"));
+
+                string hoTen =
+                    Convert.ToString(
+                        gv_hopdong.GetFocusedRowCellValue("HoTen"));
+
                 string loaiHopDong =
                     Convert.ToString(
                         gv_hopdong.GetFocusedRowCellValue("LoaiHopDong"));
@@ -513,6 +566,19 @@ VALUES
                     Convert.ToDateTime(
                         gv_hopdong.GetFocusedRowCellValue("NgayBD"));
 
+                // ===== NGÀY KẾT THÚC =====
+                object ngayKT = DBNull.Value;
+
+                object valueNgayKT =
+                    gv_hopdong.GetFocusedRowCellValue("NgayKT");
+
+                if (valueNgayKT != null &&
+                    valueNgayKT != DBNull.Value)
+                {
+                    ngayKT =
+                        Convert.ToDateTime(valueNgayKT);
+                }
+
                 int luongCB =
                     Convert.ToInt32(
                         gv_hopdong.GetFocusedRowCellValue("LuongCB"));
@@ -528,16 +594,17 @@ VALUES
                 ConnectData.taoketnoi();
 
                 string sql = @"
-                    UPDATE HOPDONG
-                    SET
-                        NgayBD=@NgayBD,
-                        LoaiHopDong=@LoaiHopDong,
-                        PhongBan_ID=@PhongBan_ID,
-                        ChucVu=@ChucVu,
-                        LuongCB=@LuongCB,
-                        HeSoLuong=@HeSoLuong,
-                        GhiChu=@GhiChu
-                    WHERE Id=@Id";
+    UPDATE HOPDONG
+    SET
+        NgayBD=@NgayBD,
+        NgayKT=@NgayKT,
+        LoaiHopDong=@LoaiHopDong,
+        PhongBan_ID=@PhongBan_ID,
+        ChucVu=@ChucVu,
+        LuongCB=@LuongCB,
+        HeSoLuong=@HeSoLuong,
+        GhiChu=@GhiChu
+    WHERE Id=@Id";
 
                 MySqlCommand cmd =
                     new MySqlCommand(
@@ -547,6 +614,10 @@ VALUES
                 cmd.Parameters.AddWithValue(
                     "@NgayBD",
                     ngayBD);
+
+                cmd.Parameters.AddWithValue(
+                    "@NgayKT",
+                    ngayKT);
 
                 cmd.Parameters.AddWithValue(
                     "@LoaiHopDong",
@@ -580,9 +651,16 @@ VALUES
 
                 MessageBox.Show(
                     "Sửa hợp đồng thành công");
-                LogSystem.WriteLog("Nhân viên", "SỬA", "Sửa hợp đồng cho nhân viên ID: " + MaNV + " - " + HoTen + " - " + Login.txt_taikhoan.Text);
 
-
+                LogSystem.WriteLog(
+                    "Nhân viên",
+                    "SỬA",
+                    "Sửa hợp đồng cho nhân viên: "
+                    + maNV
+                    + " - "
+                    + hoTen
+                    + " - "
+                    + Login.txt_taikhoan.Text);
             }
             catch (Exception ex)
             {
@@ -592,6 +670,7 @@ VALUES
             {
                 ConnectData.dongketnoi();
             }
+
             load_hopdong();
         }
         
@@ -611,7 +690,7 @@ VALUES
 
         private void load_hopdong()
         {
-            gc_hopdong.DataSource = ConnectData.getdata("SELECT \r\n    hd.Id,\r\n    nv.MaNV,\r\n    CONCAT(nv.HoDem, ' ', nv.Ten) AS HoTen,\r\n    NgaySinh, SDT, Email,\r\n    hd.So_HopDong,\r\n    hd.NgayBD,hd.PhongBan_ID,hd.ChucVu,\r\n    hd.LoaiHopDong,\r\n    hd.LuongCB,\r\n    hd.HeSoLuong,\r\n    ROUND(LuongCB * HeSoLuong,0) AS LuongThucNhan,\r\n    hd.GhiChu\r\nFROM HOPDONG hd\r\nINNER JOIN NHANVIEN nv\r\n    ON hd.NhanVien_id = nv.id\r\nWHERE nv.DELETEO_BY IS NULL\r\nORDER BY hd.Id desc;");
+            gc_hopdong.DataSource = ConnectData.getdata("SELECT \r\n    hd.Id,\r\n    nv.MaNV,\r\n    CONCAT(nv.HoDem, ' ', nv.Ten) AS HoTen,\r\n    NgaySinh, SDT, Email,\r\n    hd.So_HopDong,\r\n    hd.NgayBD,hd.NgayKT,hd.PhongBan_ID,hd.ChucVu,\r\n    hd.LoaiHopDong,\r\n    hd.LuongCB,\r\n    hd.HeSoLuong,\r\n    ROUND(LuongCB * HeSoLuong,0) AS LuongThucNhan,\r\n    hd.GhiChu\r\nFROM HOPDONG hd\r\nINNER JOIN NHANVIEN nv\r\n    ON hd.NhanVien_id = nv.id\r\nWHERE nv.DELETEO_BY IS NULL\r\nORDER BY hd.Id desc;");
 
         }
         void clearForm()
@@ -674,6 +753,13 @@ VALUES
         {
             try
             {
+                if (gv_hopdong.RowCount <= 0)
+                {
+                    MessageBox.Show(
+                        "Không có dữ liệu để xuất");
+                    return;
+                }
+
                 SaveFileDialog save =
                     new SaveFileDialog();
 
@@ -689,6 +775,10 @@ VALUES
                 if (save.ShowDialog() != DialogResult.OK)
                     return;
 
+                // ===== Mở kết nối =====
+                ConnectData.taoketnoi();
+
+                // ===== Khởi tạo Excel =====
                 Microsoft.Office.Interop.Excel.Application app =
                     new Microsoft.Office.Interop.Excel.Application();
 
@@ -707,7 +797,7 @@ VALUES
                 int dong =
                     gv_hopdong.RowCount;
 
-                // ===== Tiêu đề =====
+                // ===== TIÊU ĐỀ =====
                 Microsoft.Office.Interop.Excel.Range title =
                     ws.Range["A1", "L1"];
 
@@ -723,8 +813,10 @@ VALUES
                 title.HorizontalAlignment =
                     Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
-                // ===== Header =====
+                // ===== HEADER =====
                 int colExcel = 1;
+
+                int colPhongBan = 0;
 
                 for (int i = 0; i < cot; i++)
                 {
@@ -739,17 +831,29 @@ VALUES
                     ws.Cells[3, colExcel] =
                         gv_hopdong.Columns[i].Caption;
 
-                    ws.Cells[3, colExcel].Font.Bold = true;
+                    ws.Cells[3, colExcel].Font.Bold =
+                        true;
 
-                    ws.Cells[3, colExcel].Borders.LineStyle = 1;
+                    ws.Cells[3, colExcel].Borders.LineStyle =
+                        1;
 
                     ws.Cells[3, colExcel].Interior.Color =
                         System.Drawing.Color.LightGray;
 
+                    // ===== Ép TEXT =====
+                    ws.Columns[colExcel].NumberFormat =
+                        "@";
+
+                    // ===== Cột phòng ban =====
+                    if (tenCot == "PhongBan_ID")
+                    {
+                        colPhongBan = colExcel;
+                    }
+
                     colExcel++;
                 }
 
-                // ===== Dữ liệu =====
+                // ===== DỮ LIỆU =====
                 for (int i = 0; i < dong; i++)
                 {
                     colExcel = 1;
@@ -759,7 +863,6 @@ VALUES
                         string tenCot =
                             gv_hopdong.Columns[j].FieldName;
 
-                        // ===== Bỏ cột sửa xóa =====
                         if (tenCot == "Sua"
                             || tenCot == "Xoa")
                             continue;
@@ -782,19 +885,38 @@ VALUES
                                     gv_hopdong.Columns[j]);
                         }
 
-                        // ===== Format ngày =====
-                        if (value != null
-                            && (tenCot == "NgaySinh"
-                            || tenCot == "NgayBD"))
+                        // ===== Chỉ format cột ngày =====
+                        if (value != null &&
+                           (
+                            tenCot == "NgayBD"
+                            || tenCot == "NgaySinh"
+                            || tenCot == "NgayCap"
+                            || tenCot == "NgayCapCCCD"
+                            || tenCot == "CREATEO_DATE"
+                            || tenCot == "UPDATEO_DATE"
+                            || tenCot == "DELETEO_DATE"
+                           ))
                         {
-                            ws.Cells[i + 4, colExcel] =
-                                Convert.ToDateTime(value)
-                                .ToString("dd/MM/yyyy");
+                            DateTime ngay;
+
+                            if (DateTime.TryParse(
+                                value.ToString(),
+                                out ngay))
+                            {
+                                ws.Cells[i + 4, colExcel] =
+                                    "'" + ngay.ToString("dd/MM/yyyy");
+                            }
+                            else
+                            {
+                                ws.Cells[i + 4, colExcel] =
+                                    "'" + value?.ToString();
+                            }
                         }
                         else
                         {
+                            // ===== Giữ nguyên =====
                             ws.Cells[i + 4, colExcel] =
-                                value?.ToString();
+                                "'" + value?.ToString();
                         }
 
                         // ===== Border =====
@@ -805,11 +927,84 @@ VALUES
                     }
                 }
 
+                // ===== Lấy danh sách phòng ban =====
+                List<string> dsPhongBan =
+                    new List<string>();
+
+                string sql =
+                    "SELECT TenPhongBan FROM PHONGBAN";
+
+                MySqlCommand cmd =
+                    new MySqlCommand(
+                        sql,
+                        ConnectData.conn);
+
+                MySqlDataReader dr =
+                    cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dsPhongBan.Add(
+                        dr["TenPhongBan"].ToString());
+                }
+
+                dr.Close();
+
+                // ===== Sheet ẩn =====
+                Microsoft.Office.Interop.Excel.Worksheet wsPB =
+                    (Microsoft.Office.Interop.Excel.Worksheet)
+                    wb.Sheets.Add();
+
+                wsPB.Name =
+                    "PHONGBAN_DATA";
+
+                for (int i = 0; i < dsPhongBan.Count; i++)
+                {
+                    wsPB.Cells[i + 1, 1] =
+                        dsPhongBan[i];
+                }
+
+                // ===== Ẩn sheet =====
+                wsPB.Visible =
+                    Microsoft.Office.Interop.Excel
+                    .XlSheetVisibility.xlSheetHidden;
+
+                // ===== Dropdown combobox =====
+                Microsoft.Office.Interop.Excel.Range rng =
+                    ws.Range[
+                        ws.Cells[4, colPhongBan],
+                        ws.Cells[dong + 100, colPhongBan]
+                    ];
+
+                rng.Validation.Delete();
+
+                rng.Validation.Add(
+                    Microsoft.Office.Interop.Excel
+                    .XlDVType.xlValidateList,
+
+                    Microsoft.Office.Interop.Excel
+                    .XlDVAlertStyle.xlValidAlertStop,
+
+                    Microsoft.Office.Interop.Excel
+                    .XlFormatConditionOperator.xlBetween,
+
+                    "=PHONGBAN_DATA!$A$1:$A$"
+                    + dsPhongBan.Count,
+
+                    Type.Missing);
+
+                rng.Validation.IgnoreBlank =
+                    true;
+
+                rng.Validation.InCellDropdown =
+                    true;
+
                 // ===== Căn giữa =====
                 ws.Range["A3",
                     ws.Cells[dong + 3, colExcel - 1]]
                     .HorizontalAlignment =
-                    Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    Microsoft.Office.Interop.Excel
+                    .XlHAlign.xlHAlignCenter;
 
                 // ===== AutoFit =====
                 ws.Columns.AutoFit();
@@ -821,15 +1016,36 @@ VALUES
 
                 app.Quit();
 
+                // ===== Giải phóng =====
+                System.Runtime.InteropServices
+                    .Marshal.ReleaseComObject(ws);
+
+                System.Runtime.InteropServices
+                    .Marshal.ReleaseComObject(wsPB);
+
+                System.Runtime.InteropServices
+                    .Marshal.ReleaseComObject(wb);
+
+                System.Runtime.InteropServices
+                    .Marshal.ReleaseComObject(app);
+
                 MessageBox.Show(
                     "Xuất Excel thành công",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+
+                // ===== Mở file =====
+                System.Diagnostics.Process.Start(
+                    save.FileName);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                ConnectData.dongketnoi();
             }
         }
 

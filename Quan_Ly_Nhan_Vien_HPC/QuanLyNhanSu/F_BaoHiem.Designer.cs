@@ -521,7 +521,7 @@
             this.NoiCap.AppearanceCell.Options.UseFont = true;
             this.NoiCap.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.NoiCap.AppearanceHeader.Options.UseFont = true;
-            this.NoiCap.Caption = "Nơi cấp";
+            this.NoiCap.Caption = "Nơi đóng bảo hiểm";
             this.NoiCap.FieldName = "NoiCap";
             this.NoiCap.Name = "NoiCap";
             this.NoiCap.Visible = true;

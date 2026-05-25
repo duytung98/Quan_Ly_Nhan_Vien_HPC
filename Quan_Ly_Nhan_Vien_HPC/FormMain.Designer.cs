@@ -71,6 +71,8 @@
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_backupdulieu = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_log = new DevExpress.XtraBars.BarButtonItem();
             this.HeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.NhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -93,8 +95,6 @@
             this.ls_sinhnhat = new DevExpress.XtraEditors.ListBoxControl();
             this.id_hoten = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
-            this.btn_backupdulieu = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_log = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -500,6 +500,26 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
+            // btn_backupdulieu
+            // 
+            this.btn_backupdulieu.Caption = "Backup dữ liệu";
+            this.btn_backupdulieu.Id = 42;
+            this.btn_backupdulieu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_backupdulieu.ImageOptions.SvgImage")));
+            this.btn_backupdulieu.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_backupdulieu.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_backupdulieu.Name = "btn_backupdulieu";
+            this.btn_backupdulieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_backupdulieu_ItemClick);
+            // 
+            // btn_log
+            // 
+            this.btn_log.Caption = "Xem LOG";
+            this.btn_log.Id = 43;
+            this.btn_log.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_log.ImageOptions.SvgImage")));
+            this.btn_log.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_log.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_log.Name = "btn_log";
+            this.btn_log.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_log_ItemClick);
+            // 
             // HeThong
             // 
             this.HeThong.Appearance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -729,26 +749,6 @@
             this.barHeaderItem1.Id = 12;
             this.barHeaderItem1.Name = "barHeaderItem1";
             // 
-            // btn_backupdulieu
-            // 
-            this.btn_backupdulieu.Caption = "Backup dữ liệu";
-            this.btn_backupdulieu.Id = 42;
-            this.btn_backupdulieu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.btn_backupdulieu.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_backupdulieu.ItemAppearance.Normal.Options.UseFont = true;
-            this.btn_backupdulieu.Name = "btn_backupdulieu";
-            this.btn_backupdulieu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_backupdulieu_ItemClick);
-            // 
-            // btn_log
-            // 
-            this.btn_log.Caption = "Xem LOG";
-            this.btn_log.Id = 43;
-            this.btn_log.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_log.ImageOptions.SvgImage")));
-            this.btn_log.ItemAppearance.Normal.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_log.ItemAppearance.Normal.Options.UseFont = true;
-            this.btn_log.Name = "btn_log";
-            this.btn_log.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_log_ItemClick);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -757,7 +757,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.ribbonControl1);
-            this.IconOptions.Image = global::Quan_Ly_Nhan_Vien_HPC.Properties.Resources.logo_removebg_preview;
+            this.IconOptions.Image = global::Quan_Ly_Nhan_Vien_HPC.Properties.Resources.logo;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
